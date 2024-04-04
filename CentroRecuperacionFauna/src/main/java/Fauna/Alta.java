@@ -125,7 +125,7 @@ public class Alta extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jTextField3.setBackground(new java.awt.Color(0, 153, 204));
         jTextField3.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N

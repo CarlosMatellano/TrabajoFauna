@@ -35,7 +35,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         salir = new javax.swing.JButton();
         alta = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         jTextField1.setBackground(new java.awt.Color(0, 153, 204));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
