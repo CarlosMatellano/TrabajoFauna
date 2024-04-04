@@ -12,19 +12,19 @@ import java.util.Date;
  */
 public class Ave extends Animal{
     
-    private String lesion;
+    private String lesioncaza;
     
-    public Ave(String especie, Double peso, String gravedad, Date fechaentrada, String lesion) {
+    public Ave(String especie, Double peso, String gravedad, Date fechaentrada, String lesioncaza) {
         super(especie, peso, gravedad, fechaentrada);
-        this.lesion = lesion;
+        this.lesioncaza = lesioncaza;
     }    
 
     public String getLesion() {
-        return lesion;
+        return lesioncaza;
     }
 
-    public void setLesion(String lesion) {
-        this.lesion = lesion;
-    }
+    public void setLesioncaza(String lesioncaza) {
+        this.lesioncaza = lesioncaza;
+    } 
      
 }
