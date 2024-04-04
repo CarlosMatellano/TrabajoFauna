@@ -61,8 +61,18 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jTextField2.setText("SELECCIONE LA OPCIÓN A REALIZAR");
 
         jButton2.setText("BAJA");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("LIBERACIÓN");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         listado.setText("LISTADO");
         listado.addActionListener(new java.awt.event.ActionListener() {
@@ -72,8 +82,18 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         });
 
         salir.setText("SALIR");
+        salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+        });
 
         alta.setText("ALTA");
+        alta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                altaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,12 +150,28 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void tratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tratamientoActionPerformed
-        // TODO add your handling code here:
+        new Tratamiento().setVisible(true);
     }//GEN-LAST:event_tratamientoActionPerformed
 
     private void listadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoActionPerformed
-        // TODO add your jklj code here:
+        new Listado().setVisible(true);
     }//GEN-LAST:event_listadoActionPerformed
+
+    private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
+        new Alta().setVisible(true);
+    }//GEN-LAST:event_altaActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new Liberacion().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new Baja().setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+        System.exit(WIDTH);
+    }//GEN-LAST:event_salirActionPerformed
 
     /**
      * @param args the command line arguments
