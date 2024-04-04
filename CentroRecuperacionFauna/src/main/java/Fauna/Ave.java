@@ -8,12 +8,12 @@ import java.util.Date;
 
 /**
  *
- * @author Alumno
+ * @author Hugo Mazarío Ros y Carlos Matellano Villacampa 1ºDAM
  */
 public class Ave extends Animal{
     
     public Ave(String especie, Double peso, String gravedad, Date fechaentrada) {
         super(especie, peso, gravedad, fechaentrada);
     }
-    
+     
 }
