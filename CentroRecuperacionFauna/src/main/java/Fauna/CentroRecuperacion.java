@@ -134,7 +134,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_tratamientoActionPerformed
 
     private void listadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoActionPerformed
-        // TODO add your handling code here:
+        // TODO add your jklj code here:
     }//GEN-LAST:event_listadoActionPerformed
 
     /**

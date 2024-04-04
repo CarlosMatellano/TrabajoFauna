@@ -19,7 +19,7 @@ public class Mamífero extends Animal{
     public String getLesionAtropello() {
         return lesionAtropello;
     }
-
+    
     public void setLesionAtropello(String lesionAtropello) {
         this.lesionAtropello = lesionAtropello;
     }
