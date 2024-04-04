@@ -34,9 +34,9 @@
               </Group>
               <EmptySpace pref="114" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jButton1" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jButton4" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jButton5" alignment="1" max="32767" attributes="0"/>
+                  <Component id="tratamiento" alignment="1" max="32767" attributes="0"/>
+                  <Component id="listado" alignment="1" max="32767" attributes="0"/>
+                  <Component id="salir" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
           </Group>
@@ -51,17 +51,17 @@
               <EmptySpace pref="79" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="alta" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="tratamiento" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton4" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="listado" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                   <Component id="jButton3" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton2" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                  <Component id="jButton5" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="salir" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
           </Group>
@@ -87,10 +87,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="tratamiento">
       <Properties>
         <Property name="text" type="java.lang.String" value="TRATAMIENTO"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tratamientoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField2">
       <Properties>
@@ -114,12 +117,15 @@
         <Property name="text" type="java.lang.String" value="LIBERACI&#xd3;N"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="listado">
       <Properties>
         <Property name="text" type="java.lang.String" value="LISTADO"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listadoActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="salir">
       <Properties>
         <Property name="text" type="java.lang.String" value="SALIR"/>
       </Properties>
