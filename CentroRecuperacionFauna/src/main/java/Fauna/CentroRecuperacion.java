@@ -26,6 +26,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ventanaTratamiento = new javax.swing.JInternalFrame();
+        jTextField3 = new javax.swing.JTextField();
+        ventanaListado = new javax.swing.JInternalFrame();
+        jTextField4 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         tratamiento = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
@@ -34,6 +38,58 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         listado = new javax.swing.JButton();
         salir = new javax.swing.JButton();
         alta = new javax.swing.JButton();
+
+        ventanaTratamiento.setVisible(true);
+
+        jTextField3.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField3.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField3.setText("TRATAMIENTO");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ventanaTratamientoLayout = new javax.swing.GroupLayout(ventanaTratamiento.getContentPane());
+        ventanaTratamiento.getContentPane().setLayout(ventanaTratamientoLayout);
+        ventanaTratamientoLayout.setHorizontalGroup(
+            ventanaTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+        );
+        ventanaTratamientoLayout.setVerticalGroup(
+            ventanaTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ventanaTratamientoLayout.createSequentialGroup()
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(307, Short.MAX_VALUE))
+        );
+
+        ventanaListado.setVisible(true);
+
+        jTextField4.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField4.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField4.setText("LISTADO");
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ventanaListadoLayout = new javax.swing.GroupLayout(ventanaListado.getContentPane());
+        ventanaListado.getContentPane().setLayout(ventanaListadoLayout);
+        ventanaListadoLayout.setHorizontalGroup(
+            ventanaListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+        );
+        ventanaListadoLayout.setVerticalGroup(
+            ventanaListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ventanaListadoLayout.createSequentialGroup()
+                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(327, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -146,23 +202,23 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tratamientoActionPerformed
-        new Tratamiento().setVisible(true);
+        ventanaTratamiento.setVisible(true);
     }//GEN-LAST:event_tratamientoActionPerformed
 
     private void listadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoActionPerformed
-        new Listado().setVisible(true);
+        ventanaListado.setVisible(true);
     }//GEN-LAST:event_listadoActionPerformed
 
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
-        new Alta().setVisible(true);
+        ventanaAlta.setVisible(true);
     }//GEN-LAST:event_altaActionPerformed
 
     private void LiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LiberacionActionPerformed
-        new Liberacion().setVisible(true);
+        ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
 
     private void BajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaActionPerformed
-        new Baja().setVisible(true);
+        ventanaBaja.setVisible(true);
     }//GEN-LAST:event_BajaActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
@@ -172,6 +228,14 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,8 +278,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JButton alta;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JButton listado;
     private javax.swing.JButton salir;
     private javax.swing.JButton tratamiento;
+    private javax.swing.JInternalFrame ventanaListado;
+    private javax.swing.JInternalFrame ventanaTratamiento;
     // End of variables declaration//GEN-END:variables
 }
