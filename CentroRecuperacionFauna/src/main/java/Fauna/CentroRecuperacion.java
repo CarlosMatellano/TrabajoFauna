@@ -306,7 +306,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_BajaActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
-        System.exit(WIDTH);
+        System.exit(0);
     }//GEN-LAST:event_salirActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
