@@ -31,6 +31,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaBaja = new javax.swing.JInternalFrame();
         ventanaTratamiento = new javax.swing.JInternalFrame();
         ventanaListado = new javax.swing.JInternalFrame();
+        jTextField4 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         tratamiento = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
@@ -94,15 +95,28 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
         ventanaListado.setVisible(true);
 
+        jTextField4.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField4.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField4.setText("LIBERACIÓN");
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ventanaListadoLayout = new javax.swing.GroupLayout(ventanaListado.getContentPane());
         ventanaListado.getContentPane().setLayout(ventanaListadoLayout);
         ventanaListadoLayout.setHorizontalGroup(
             ventanaListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
         );
         ventanaListadoLayout.setVerticalGroup(
             ventanaListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(ventanaListadoLayout.createSequentialGroup()
+                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(299, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -224,7 +238,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_listadoActionPerformed
 
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
-        ventanaAltaa.setVisible(true);
+        ventanaAlta.setVisible(true);
     }//GEN-LAST:event_altaActionPerformed
 
     private void LiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LiberacionActionPerformed
@@ -292,7 +306,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JButton alta;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JButton listado;
     private javax.swing.JButton salir;
