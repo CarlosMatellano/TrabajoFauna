@@ -62,7 +62,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             ventanaTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ventanaTratamientoLayout.createSequentialGroup()
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(307, Short.MAX_VALUE))
+                .addContainerGap(298, Short.MAX_VALUE))
         );
 
         ventanaListado.setVisible(true);
