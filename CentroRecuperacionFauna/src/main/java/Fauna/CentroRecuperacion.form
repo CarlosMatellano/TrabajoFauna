@@ -35,7 +35,7 @@
                               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jButton2" min="-2" pref="129" max="-2" attributes="0"/>
+                              <Component id="Baja" min="-2" pref="129" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -45,7 +45,7 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jButton3" min="-2" pref="129" max="-2" attributes="0"/>
+                      <Component id="Liberacion" min="-2" pref="129" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="listado" min="-2" pref="129" max="-2" attributes="0"/>
                   </Group>
@@ -67,12 +67,12 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton3" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
+                  <Component id="Liberacion" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
                   <Component id="listado" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton2" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
+                  <Component id="Baja" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
                   <Component id="salir" alignment="3" pref="63" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="19" max="32767" attributes="0"/>
@@ -119,20 +119,20 @@
         <Property name="text" type="java.lang.String" value="SELECCIONE LA OPCI&#xd3;N A REALIZAR"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="Baja">
       <Properties>
         <Property name="text" type="java.lang.String" value="BAJA"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BajaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="Liberacion">
       <Properties>
         <Property name="text" type="java.lang.String" value="LIBERACI&#xd3;N"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LiberacionActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="listado">
