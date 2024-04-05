@@ -26,6 +26,9 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ventanaAlta = new javax.swing.JInternalFrame();
+        ventanaLiberacion = new javax.swing.JInternalFrame();
+        ventanaBaja = new javax.swing.JInternalFrame();
         jTextField1 = new javax.swing.JTextField();
         tratamiento = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
@@ -34,6 +37,45 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         listado = new javax.swing.JButton();
         salir = new javax.swing.JButton();
         alta = new javax.swing.JButton();
+
+        ventanaAlta.setVisible(true);
+
+        javax.swing.GroupLayout ventanaAltaLayout = new javax.swing.GroupLayout(ventanaAlta.getContentPane());
+        ventanaAlta.getContentPane().setLayout(ventanaAltaLayout);
+        ventanaAltaLayout.setHorizontalGroup(
+            ventanaAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        ventanaAltaLayout.setVerticalGroup(
+            ventanaAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        ventanaLiberacion.setVisible(true);
+
+        javax.swing.GroupLayout ventanaLiberacionLayout = new javax.swing.GroupLayout(ventanaLiberacion.getContentPane());
+        ventanaLiberacion.getContentPane().setLayout(ventanaLiberacionLayout);
+        ventanaLiberacionLayout.setHorizontalGroup(
+            ventanaLiberacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        ventanaLiberacionLayout.setVerticalGroup(
+            ventanaLiberacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        ventanaBaja.setVisible(true);
+
+        javax.swing.GroupLayout ventanaBajaLayout = new javax.swing.GroupLayout(ventanaBaja.getContentPane());
+        ventanaBaja.getContentPane().setLayout(ventanaBajaLayout);
+        ventanaBajaLayout.setHorizontalGroup(
+            ventanaBajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        ventanaBajaLayout.setVerticalGroup(
+            ventanaBajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -154,15 +196,15 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_listadoActionPerformed
 
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
-        new Alta().setVisible(true);
+        ventanaAlta.setVisible(true);
     }//GEN-LAST:event_altaActionPerformed
 
     private void LiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LiberacionActionPerformed
-        new Liberacion().setVisible(true);
+        ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
 
     private void BajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaActionPerformed
-        new Baja().setVisible(true);
+        ventanaBaja.setVisible(true);
     }//GEN-LAST:event_BajaActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
@@ -217,5 +259,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JButton listado;
     private javax.swing.JButton salir;
     private javax.swing.JButton tratamiento;
+    private javax.swing.JInternalFrame ventanaAlta;
+    private javax.swing.JInternalFrame ventanaBaja;
+    private javax.swing.JInternalFrame ventanaLiberacion;
     // End of variables declaration//GEN-END:variables
 }
