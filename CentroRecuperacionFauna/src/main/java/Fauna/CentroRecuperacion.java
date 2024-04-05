@@ -210,15 +210,15 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_listadoActionPerformed
 
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
-        ventanaAlta.setVisible(true);
+//        ventanaAlta.setVisible(true);
     }//GEN-LAST:event_altaActionPerformed
 
     private void LiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LiberacionActionPerformed
-        ventanaLiberacion.setVisible(true);
+//      ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
 
     private void BajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaActionPerformed
-        ventanaBaja.setVisible(true);
+//      ventanaBaja.setVisible(true);
     }//GEN-LAST:event_BajaActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
