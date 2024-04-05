@@ -29,6 +29,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaAlta = new javax.swing.JInternalFrame();
         ventanaLiberacion = new javax.swing.JInternalFrame();
         ventanaBaja = new javax.swing.JInternalFrame();
+        ventanaTratamiento = new javax.swing.JInternalFrame();
+        ventanaListado = new javax.swing.JInternalFrame();
         jTextField1 = new javax.swing.JTextField();
         tratamiento = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
@@ -74,6 +76,32 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         );
         ventanaBajaLayout.setVerticalGroup(
             ventanaBajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        ventanaTratamiento.setVisible(true);
+
+        javax.swing.GroupLayout ventanaTratamientoLayout = new javax.swing.GroupLayout(ventanaTratamiento.getContentPane());
+        ventanaTratamiento.getContentPane().setLayout(ventanaTratamientoLayout);
+        ventanaTratamientoLayout.setHorizontalGroup(
+            ventanaTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        ventanaTratamientoLayout.setVerticalGroup(
+            ventanaTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        ventanaListado.setVisible(true);
+
+        javax.swing.GroupLayout ventanaListadoLayout = new javax.swing.GroupLayout(ventanaListado.getContentPane());
+        ventanaListado.getContentPane().setLayout(ventanaListadoLayout);
+        ventanaListadoLayout.setHorizontalGroup(
+            ventanaListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        ventanaListadoLayout.setVerticalGroup(
+            ventanaListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -188,11 +216,11 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tratamientoActionPerformed
-        new Tratamiento().setVisible(true);
+        ventanaTratamiento.setVisible(true);
     }//GEN-LAST:event_tratamientoActionPerformed
 
     private void listadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoActionPerformed
-        new Listado().setVisible(true);
+        ventanaListado.setVisible(true);
     }//GEN-LAST:event_listadoActionPerformed
 
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
@@ -262,5 +290,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JInternalFrame ventanaAlta;
     private javax.swing.JInternalFrame ventanaBaja;
     private javax.swing.JInternalFrame ventanaLiberacion;
+    private javax.swing.JInternalFrame ventanaListado;
+    private javax.swing.JInternalFrame ventanaTratamiento;
     // End of variables declaration//GEN-END:variables
 }
