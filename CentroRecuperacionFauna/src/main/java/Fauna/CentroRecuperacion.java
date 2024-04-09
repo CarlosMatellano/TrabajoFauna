@@ -636,7 +636,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_LiberacionActionPerformed
 
     private void BajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaActionPerformed
-        ventanaBaja.setSize(374, 398);
+        ventanaBaja.setSize(373, 398);
         ventanaBaja.setVisible(true);
     }//GEN-LAST:event_BajaActionPerformed
 
@@ -755,7 +755,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList4;
@@ -772,7 +771,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
