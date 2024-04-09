@@ -26,16 +26,16 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ventanaAlta = new javax.swing.JInternalFrame();
-        jTextField8 = new javax.swing.JTextField();
-        ventanaLiberacion = new javax.swing.JInternalFrame();
-        jTextField7 = new javax.swing.JTextField();
-        ventanaBaja = new javax.swing.JInternalFrame();
-        jTextField6 = new javax.swing.JTextField();
-        ventanaTratamiento = new javax.swing.JInternalFrame();
-        jTextField5 = new javax.swing.JTextField();
-        ventanaListado = new javax.swing.JInternalFrame();
-        jTextField4 = new javax.swing.JTextField();
+        ventanaAlta = new javax.swing.JFrame();
+        jTextField9 = new javax.swing.JTextField();
+        ventanaTratamiento = new javax.swing.JFrame();
+        jTextField10 = new javax.swing.JTextField();
+        ventanaLiberacion = new javax.swing.JFrame();
+        jTextField11 = new javax.swing.JTextField();
+        ventanaListado = new javax.swing.JFrame();
+        jTextField12 = new javax.swing.JTextField();
+        ventanaBaja = new javax.swing.JFrame();
+        jTextField13 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         tratamiento = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
@@ -45,17 +45,15 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         salir = new javax.swing.JButton();
         alta = new javax.swing.JButton();
 
-        ventanaAlta.setVisible(true);
-
-        jTextField8.setEditable(false);
-        jTextField8.setBackground(new java.awt.Color(0, 153, 204));
-        jTextField8.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField8.setText("ALTA");
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        jTextField9.setEditable(false);
+        jTextField9.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField9.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jTextField9.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField9.setText("ALTA");
+        jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                jTextField9ActionPerformed(evt);
             }
         });
 
@@ -63,80 +61,24 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaAlta.getContentPane().setLayout(ventanaAltaLayout);
         ventanaAltaLayout.setHorizontalGroup(
             ventanaAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
+            .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
         );
         ventanaAltaLayout.setVerticalGroup(
             ventanaAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ventanaAltaLayout.createSequentialGroup()
-                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(274, Short.MAX_VALUE))
+                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(253, Short.MAX_VALUE))
         );
 
-        ventanaLiberacion.setVisible(true);
-
-        jTextField7.setEditable(false);
-        jTextField7.setBackground(new java.awt.Color(0, 153, 204));
-        jTextField7.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField7.setText("LIBERACIÓN");
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        jTextField10.setEditable(false);
+        jTextField10.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField10.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jTextField10.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField10.setText("TRATAMIENTO");
+        jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout ventanaLiberacionLayout = new javax.swing.GroupLayout(ventanaLiberacion.getContentPane());
-        ventanaLiberacion.getContentPane().setLayout(ventanaLiberacionLayout);
-        ventanaLiberacionLayout.setHorizontalGroup(
-            ventanaLiberacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
-        );
-        ventanaLiberacionLayout.setVerticalGroup(
-            ventanaLiberacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ventanaLiberacionLayout.createSequentialGroup()
-                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(308, Short.MAX_VALUE))
-        );
-
-        ventanaBaja.setVisible(true);
-
-        jTextField6.setEditable(false);
-        jTextField6.setBackground(new java.awt.Color(0, 153, 204));
-        jTextField6.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setText("BAJA");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout ventanaBajaLayout = new javax.swing.GroupLayout(ventanaBaja.getContentPane());
-        ventanaBaja.getContentPane().setLayout(ventanaBajaLayout);
-        ventanaBajaLayout.setHorizontalGroup(
-            ventanaBajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-        );
-        ventanaBajaLayout.setVerticalGroup(
-            ventanaBajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ventanaBajaLayout.createSequentialGroup()
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(292, Short.MAX_VALUE))
-        );
-
-        ventanaTratamiento.setVisible(true);
-
-        jTextField5.setEditable(false);
-        jTextField5.setBackground(new java.awt.Color(0, 153, 204));
-        jTextField5.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setText("TRATAMIENTO");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                jTextField10ActionPerformed(evt);
             }
         });
 
@@ -144,26 +86,49 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaTratamiento.getContentPane().setLayout(ventanaTratamientoLayout);
         ventanaTratamientoLayout.setHorizontalGroup(
             ventanaTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+            .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
         );
         ventanaTratamientoLayout.setVerticalGroup(
             ventanaTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ventanaTratamientoLayout.createSequentialGroup()
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(298, Short.MAX_VALUE))
+                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(253, Short.MAX_VALUE))
         );
 
-        ventanaListado.setVisible(true);
-
-        jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(0, 153, 204));
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("LISTADO");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        jTextField11.setEditable(false);
+        jTextField11.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField11.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jTextField11.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField11.setText("LIBERACIÓN");
+        jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                jTextField11ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ventanaLiberacionLayout = new javax.swing.GroupLayout(ventanaLiberacion.getContentPane());
+        ventanaLiberacion.getContentPane().setLayout(ventanaLiberacionLayout);
+        ventanaLiberacionLayout.setHorizontalGroup(
+            ventanaLiberacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTextField11, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+        );
+        ventanaLiberacionLayout.setVerticalGroup(
+            ventanaLiberacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ventanaLiberacionLayout.createSequentialGroup()
+                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(253, Short.MAX_VALUE))
+        );
+
+        jTextField12.setEditable(false);
+        jTextField12.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField12.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jTextField12.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField12.setText("LISTADO");
+        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField12ActionPerformed(evt);
             }
         });
 
@@ -171,13 +136,38 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaListado.getContentPane().setLayout(ventanaListadoLayout);
         ventanaListadoLayout.setHorizontalGroup(
             ventanaListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+            .addComponent(jTextField12, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
         );
         ventanaListadoLayout.setVerticalGroup(
             ventanaListadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ventanaListadoLayout.createSequentialGroup()
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(299, Short.MAX_VALUE))
+                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(253, Short.MAX_VALUE))
+        );
+
+        jTextField13.setEditable(false);
+        jTextField13.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField13.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jTextField13.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField13.setText("BAJA");
+        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField13ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ventanaBajaLayout = new javax.swing.GroupLayout(ventanaBaja.getContentPane());
+        ventanaBaja.getContentPane().setLayout(ventanaBajaLayout);
+        ventanaBajaLayout.setHorizontalGroup(
+            ventanaBajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTextField13, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+        );
+        ventanaBajaLayout.setVerticalGroup(
+            ventanaBajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ventanaBajaLayout.createSequentialGroup()
+                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(253, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -325,25 +315,25 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_jTextField9ActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_jTextField10ActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_jTextField11ActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_jTextField12ActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_jTextField13ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -385,19 +375,19 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JButton Liberacion;
     private javax.swing.JButton alta;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JButton listado;
     private javax.swing.JButton salir;
     private javax.swing.JButton tratamiento;
-    private javax.swing.JInternalFrame ventanaAlta;
-    private javax.swing.JInternalFrame ventanaBaja;
-    private javax.swing.JInternalFrame ventanaLiberacion;
-    private javax.swing.JInternalFrame ventanaListado;
-    private javax.swing.JInternalFrame ventanaTratamiento;
+    private javax.swing.JFrame ventanaAlta;
+    private javax.swing.JFrame ventanaBaja;
+    private javax.swing.JFrame ventanaLiberacion;
+    private javax.swing.JFrame ventanaListado;
+    private javax.swing.JFrame ventanaTratamiento;
     // End of variables declaration//GEN-END:variables
 }
