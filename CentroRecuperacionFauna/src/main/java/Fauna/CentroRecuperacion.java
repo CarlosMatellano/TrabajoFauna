@@ -644,7 +644,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_LiberacionActionPerformed
 
     private void BajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaActionPerformed
-        ventanaBaja.setSize(373, 398);
+        ventanaBaja.setSize(374, 398);
         ventanaBaja.setVisible(true);
     }//GEN-LAST:event_BajaActionPerformed
 
