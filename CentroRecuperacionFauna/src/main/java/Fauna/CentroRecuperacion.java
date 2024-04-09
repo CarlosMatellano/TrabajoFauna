@@ -316,6 +316,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_listadoActionPerformed
 
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
+        ventanaAlta.setBounds(100, 100, 100, 100);
         ventanaAlta.setVisible(true);
     }//GEN-LAST:event_altaActionPerformed
 
