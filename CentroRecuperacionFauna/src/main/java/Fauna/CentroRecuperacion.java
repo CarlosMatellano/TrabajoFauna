@@ -47,6 +47,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
         ventanaAlta.setVisible(true);
 
+        jTextField8.setEditable(false);
         jTextField8.setBackground(new java.awt.Color(0, 153, 204));
         jTextField8.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField8.setForeground(new java.awt.Color(255, 255, 255));
@@ -73,6 +74,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
         ventanaLiberacion.setVisible(true);
 
+        jTextField7.setEditable(false);
         jTextField7.setBackground(new java.awt.Color(0, 153, 204));
         jTextField7.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField7.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,6 +101,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
         ventanaBaja.setVisible(true);
 
+        jTextField6.setEditable(false);
         jTextField6.setBackground(new java.awt.Color(0, 153, 204));
         jTextField6.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField6.setForeground(new java.awt.Color(255, 255, 255));
@@ -125,6 +128,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
         ventanaTratamiento.setVisible(true);
 
+        jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(0, 153, 204));
         jTextField5.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField5.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,6 +155,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
         ventanaListado.setVisible(true);
 
+        jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(0, 153, 204));
         jTextField4.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField4.setForeground(new java.awt.Color(255, 255, 255));
@@ -177,6 +182,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
+        jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(0, 153, 204));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
@@ -195,6 +201,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
+        jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(0, 153, 51));
         jTextField2.setForeground(new java.awt.Color(255, 255, 255));
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
