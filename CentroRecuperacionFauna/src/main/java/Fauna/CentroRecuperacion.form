@@ -65,7 +65,7 @@
                                   <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jTextField7" max="32767" attributes="0"/>
                                   <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jComboBox2" max="32767" attributes="0"/>
+                                  <Component id="jComboBox2" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
