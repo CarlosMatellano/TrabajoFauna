@@ -12,8 +12,8 @@ public class Reptil extends Animal {
 
     
 
-    public Reptil(String infeccionBacteriana, String especie, Double peso, String gravedad, Date fechaentrada) {
-        super(especie, peso, gravedad, fechaentrada);
+    public Reptil(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, Date fechaentrada, String infeccionBacteriana) {
+        super(tipoAnimal, nombre, especie, peso, gravedad, fechaentrada);
         this.infeccionBacteriana = infeccionBacteriana;
     }
 
