@@ -56,9 +56,9 @@
                           <Component id="especieAlta" pref="215" max="32767" attributes="0"/>
                           <Component id="fechaEAlta" max="32767" attributes="0"/>
                           <Component id="pesoAlta" alignment="0" pref="215" max="32767" attributes="0"/>
-                          <Component id="gravedadAlta" alignment="0" pref="215" max="32767" attributes="0"/>
                           <Component id="nombreAlta" alignment="0" max="32767" attributes="0"/>
                           <Component id="tipoAlta" alignment="0" max="32767" attributes="0"/>
+                          <Component id="gravedadAlta" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="36" max="32767" attributes="0"/>
                   </Group>
@@ -204,11 +204,6 @@
                 <Property name="text" type="java.lang.String" value="Gravedad Lesi&#xf3;n:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="gravedadAlta">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gravedadAltaActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JComboBox" name="tipoAlta">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -221,6 +216,23 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tipoAltaActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="gravedadAlta">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="3">
+                    <StringItem index="0" value="Leve"/>
+                    <StringItem index="1" value="Media"/>
+                    <StringItem index="2" value="Grave"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gravedadAltaActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>

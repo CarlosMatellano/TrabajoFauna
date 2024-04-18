@@ -48,8 +48,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         pesoAlta = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        gravedadAlta = new javax.swing.JTextField();
         tipoAlta = new javax.swing.JComboBox<>();
+        gravedadAlta = new javax.swing.JComboBox<>();
         ventanaTratamiento = new javax.swing.JFrame();
         jPanel3 = new javax.swing.JPanel();
         jTextField10 = new javax.swing.JTextField();
@@ -148,16 +148,17 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel7.setText("Gravedad Lesión:");
 
-        gravedadAlta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                gravedadAltaActionPerformed(evt);
-            }
-        });
-
         tipoAlta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AVE", "MAMÍFERO", "REPTIL" }));
         tipoAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipoAltaActionPerformed(evt);
+            }
+        });
+
+        gravedadAlta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Leve", "Media", "Grave" }));
+        gravedadAlta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gravedadAltaActionPerformed(evt);
             }
         });
 
@@ -187,9 +188,9 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                     .addComponent(especieAlta, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                     .addComponent(fechaEAlta)
                     .addComponent(pesoAlta, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
-                    .addComponent(gravedadAlta, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                     .addComponent(nombreAlta)
-                    .addComponent(tipoAlta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(tipoAlta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(gravedadAlta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -693,10 +694,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_pesoAltaActionPerformed
 
-    private void gravedadAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gravedadAltaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_gravedadAltaActionPerformed
-
     private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField15ActionPerformed
@@ -714,7 +711,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         String nombreA = nombreAlta.getSelectedText();
         String especieA = especieAlta.getSelectedText();
         Double pesoA = Double.parseDouble(pesoAlta.getSelectedText());
-        String gravedadA = gravedadAlta.getSelectedText();
+//        String gravedadA = gravedadAlta.getSelectedItem();
         Date fechaEA = null;
         try {
             fechaEA = formato.parse(fechaEAlta.getSelectedText());
@@ -744,6 +741,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private void tipoAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAltaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tipoAltaActionPerformed
+
+    private void gravedadAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gravedadAltaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gravedadAltaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -787,7 +788,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JButton botonGAlta;
     private javax.swing.JTextField especieAlta;
     private javax.swing.JTextField fechaEAlta;
-    private javax.swing.JTextField gravedadAlta;
+    private javax.swing.JComboBox<String> gravedadAlta;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
