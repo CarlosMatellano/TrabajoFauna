@@ -719,7 +719,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField18ActionPerformed
 
     private void botonGAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGAltaActionPerformed
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy");
         String nombreA = nombreAlta.getSelectedText();
         String especieA = especieAlta.getSelectedText();
         Double pesoA = Double.parseDouble(pesoAlta.getSelectedText());
