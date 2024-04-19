@@ -48,8 +48,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         pesoAlta = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
         tipoAlta = new javax.swing.JComboBox<>();
+        gravedadAlta = new javax.swing.JTextField();
         ventanaTratamiento = new javax.swing.JFrame();
         jPanel3 = new javax.swing.JPanel();
         jTextField10 = new javax.swing.JTextField();
@@ -64,6 +64,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaListado = new javax.swing.JFrame();
         jPanel5 = new javax.swing.JPanel();
         jTextField12 = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        lista = new javax.swing.JTextArea();
         ventanaBaja = new javax.swing.JFrame();
         jPanel6 = new javax.swing.JPanel();
         jTextField13 = new javax.swing.JTextField();
@@ -82,8 +84,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         salir = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
-
-        ventanaAlta.setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(153, 255, 153));
 
@@ -121,6 +121,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel4.setText("Fecha Entrada:");
 
+        fechaEAlta.setText("dd/mm/aaaa");
+        fechaEAlta.setToolTipText("");
         fechaEAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fechaEAltaActionPerformed(evt);
@@ -148,16 +150,16 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel7.setText("Gravedad Lesión:");
 
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
-
         tipoAlta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AVE", "MAMÍFERO", "REPTIL" }));
         tipoAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipoAltaActionPerformed(evt);
+            }
+        });
+
+        gravedadAlta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gravedadAltaActionPerformed(evt);
             }
         });
 
@@ -184,13 +186,13 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(especieAlta, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                    .addComponent(especieAlta)
                     .addComponent(fechaEAlta)
-                    .addComponent(pesoAlta, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                    .addComponent(pesoAlta)
                     .addComponent(nombreAlta)
-                    .addComponent(tipoAlta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                    .addComponent(tipoAlta, 0, 215, Short.MAX_VALUE)
+                    .addComponent(gravedadAlta))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,7 +219,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(gravedadAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(tipoAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -374,17 +376,27 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
+        lista.setColumns(20);
+        lista.setRows(5);
+        jScrollPane3.setViewportView(lista);
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3)
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 253, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ventanaListadoLayout = new javax.swing.GroupLayout(ventanaListado.getContentPane());
@@ -421,7 +433,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jTextField17.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField17.setForeground(new java.awt.Color(255, 255, 255));
         jTextField17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField17.setText("LIBERACIÓN");
+        jTextField17.setText("BAJA");
         jTextField17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField17ActionPerformed(evt);
@@ -636,7 +648,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_listadoActionPerformed
 
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
-        ventanaLiberacion.setSize(373, 398);        
+        ventanaLiberacion.setSize(397, 320);        
         ventanaAlta.setVisible(true);
     }//GEN-LAST:event_altaActionPerformed
 
@@ -694,10 +706,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_pesoAltaActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
-
     private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField15ActionPerformed
@@ -715,7 +723,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         String nombreA = nombreAlta.getSelectedText();
         String especieA = especieAlta.getSelectedText();
         Double pesoA = Double.parseDouble(pesoAlta.getSelectedText());
-        String gravedadA = jTextField8.getSelectedText();
+        String gravedadA = gravedadAlta.getSelectedText();
         Date fechaEA = null;
         try {
             fechaEA = formato.parse(fechaEAlta.getSelectedText());
@@ -727,24 +735,44 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             lesioncaza = JOptionPane.showInputDialog("La lesión ha sido provocada por caza furtiva? Si/No ");
             Ave a = new Ave("Ave",nombreA,especieA,pesoA,gravedadA,fechaEA,lesioncaza);
             animales.add(a);
+            nombreAlta.setText("");
+            especieAlta.setText("");
+            pesoAlta.setText("");
+            gravedadAlta.setText("");
+            fechaEAlta.setText("dd/mm/aaaa");
         }else{
             if (tipoAlta.getSelectedItem().equals("MAMÍFERO")) {
                 String lesionAtropello = "";
                 lesionAtropello = JOptionPane.showInputDialog("La lesión ha sido provocada por un atropello? Si/No ");
-                Mamífero m = new Mamífero("Mamifero",nombreA,especieA,pesoA,gravedadA,fechaEA,lesionAtropello);
+                Mamífero m = new Mamífero("Mamífero",nombreA,especieA,pesoA,gravedadA,fechaEA,lesionAtropello);
                 animales.add(m);
+                nombreAlta.setText("");
+                especieAlta.setText("");
+                pesoAlta.setText("");
+                gravedadAlta.setText("");
+                fechaEAlta.setText("dd/mm/aaaa");                
             } else {
                 String infeccionBacteriana = "";
                 infeccionBacteriana = JOptionPane.showInputDialog("La lesión ha sido provocada por una infección bacteriana? Si/No ");
                 Reptil r = new Reptil("Reptil",nombreA,especieA,pesoA,gravedadA,fechaEA,infeccionBacteriana);
                 animales.add(r);
+                nombreAlta.setText("");
+                especieAlta.setText("");
+                pesoAlta.setText("");
+                gravedadAlta.setText("");
+                fechaEAlta.setText("dd/mm/aaaa");                
             }
         }
+        
     }//GEN-LAST:event_botonGAltaActionPerformed
 
     private void tipoAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAltaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tipoAltaActionPerformed
+
+    private void gravedadAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gravedadAltaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gravedadAltaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -788,6 +816,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JButton botonGAlta;
     private javax.swing.JTextField especieAlta;
     private javax.swing.JTextField fechaEAlta;
+    private javax.swing.JTextField gravedadAlta;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
@@ -807,6 +836,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
@@ -817,8 +847,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextArea lista;
     private javax.swing.JButton listado;
     private javax.swing.JTextField nombreAlta;
     private javax.swing.JTextField pesoAlta;
