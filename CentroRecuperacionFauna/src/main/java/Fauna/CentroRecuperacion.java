@@ -650,13 +650,13 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
     private void listadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoActionPerformed
         ventanaListado.setVisible(true);
-       ventanaListado.setSize(445, 445);
+        ventanaListado.setSize(445, 445);
 
     }//GEN-LAST:event_listadoActionPerformed
 
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
         ventanaAlta.setVisible(true);
-       ventanaListado.setSize(445, 445);
+        ventanaAlta.setSize(445, 445);
 
     }//GEN-LAST:event_altaActionPerformed
 
@@ -715,7 +715,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField7ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        
+
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
@@ -735,7 +735,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField18ActionPerformed
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
-      
+        ventanaListado.dispose();
     }//GEN-LAST:event_VolverActionPerformed
 
     /**
