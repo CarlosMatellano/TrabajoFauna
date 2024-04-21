@@ -26,5 +26,9 @@ public class Ave extends Animal{
     public void setLesioncaza(String lesioncaza) {
         this.lesioncaza = lesioncaza;
     } 
-     
+
+    @Override
+    public String toString() {
+        return "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesioncaza: "+lesioncaza;
+    }
 }

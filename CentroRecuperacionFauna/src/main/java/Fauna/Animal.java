@@ -13,12 +13,12 @@ import java.util.Date;
  * @author Hugo Mazarío Ros y Carlos Matellano Villacampa 1ºDAM
  */
 public class Animal {
-    private String tipoAnimal;
-    private String nombre;
-    private String especie;
-    private Double peso;
-    private String gravedad;
-    private Date fechaentrada;
+    protected String tipoAnimal;
+    protected String nombre;
+    protected String especie;
+    protected Double peso;
+    protected String gravedad;
+    protected Date fechaentrada;
 
     public Animal(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, Date fechaentrada) {
         this.tipoAnimal = tipoAnimal;

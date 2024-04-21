@@ -24,5 +24,8 @@ public class Mamífero extends Animal{
         this.lesionAtropello = lesionAtropello;
     }
     
-    
+    @Override
+    public String toString() {
+        return "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesion Atropello: "+lesionAtropello;
+    }    
 }

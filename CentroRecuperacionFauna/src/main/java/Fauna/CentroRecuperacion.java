@@ -763,7 +763,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 fechaEAlta.setText("dd/mm/aaaa");                
             }
         }
-        
+    
+        for (int i = 0; i < animales.size(); i++) {
+            System.out.println(animales.get(i));
+        }
     }//GEN-LAST:event_botonGAltaActionPerformed
 
     private void tipoAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAltaActionPerformed

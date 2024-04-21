@@ -24,5 +24,8 @@ public class Reptil extends Animal {
     public void setInfeccionBacteriana(String infeccionBacteriana) {
         this.infeccionBacteriana = infeccionBacteriana;
     }
-
+    @Override
+    public String toString() {
+        return "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Infección Bacteriana: "+infeccionBacteriana;
+    }
 }
