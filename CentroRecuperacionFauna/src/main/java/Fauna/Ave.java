@@ -29,6 +29,6 @@ public class Ave extends Animal{
 
     @Override
     public String toString() {
-        return "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesioncaza: "+lesioncaza;
+        return "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesion caza: "+lesioncaza+" | Estado: "+estado;
     }
 }

@@ -395,8 +395,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ventanaListadoLayout = new javax.swing.GroupLayout(ventanaListado.getContentPane());
@@ -732,7 +732,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         }
         if (tipoAlta.getSelectedItem().equals("AVE")) {
             String lesioncaza = "";
-            lesioncaza = JOptionPane.showInputDialog("La lesión ha sido provocada por caza furtiva? Si/No ");
+            int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por caza furtiva?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
+            if (opcion == JOptionPane.YES_OPTION) {
+                lesioncaza = "Si";
+            } else {
+                lesioncaza = "No";
+            }
             Ave a = new Ave("Ave",nombreA,especieA,pesoA,gravedadA,"Tratamiento",fechaEA,lesioncaza);
             animales.add(a);
             nombreAlta.setText("");
@@ -743,7 +748,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         }else{
             if (tipoAlta.getSelectedItem().equals("MAMÍFERO")) {
                 String lesionAtropello = "";
-                lesionAtropello = JOptionPane.showInputDialog("La lesión ha sido provocada por un atropello? Si/No ");
+                int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por caza furtiva?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
+                if (opcion == JOptionPane.YES_OPTION) {
+                    lesionAtropello = "Si";
+                } else {
+                    lesionAtropello = "No";
+                }
                 Mamífero m = new Mamífero("Mamífero",nombreA,especieA,pesoA,gravedadA,"Tratamiento",fechaEA,lesionAtropello);
                 animales.add(m);
                 nombreAlta.setText("");
@@ -753,7 +763,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 fechaEAlta.setText("dd/mm/aaaa");                
             } else {
                 String infeccionBacteriana = "";
-                infeccionBacteriana = JOptionPane.showInputDialog("La lesión ha sido provocada por una infección bacteriana? Si/No ");
+                int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por caza furtiva?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
+                if (opcion == JOptionPane.YES_OPTION) {
+                    infeccionBacteriana = "Si";
+                } else {
+                    infeccionBacteriana = "No";
+                }
                 Reptil r = new Reptil("Reptil",nombreA,especieA,pesoA,gravedadA,"Tratamiento",fechaEA,infeccionBacteriana);
                 animales.add(r);
                 nombreAlta.setText("");

@@ -26,6 +26,6 @@ public class Reptil extends Animal {
     }
     @Override
     public String toString() {
-        return "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Infección Bacteriana: "+infeccionBacteriana;
+        return "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Infección Bacteriana: "+infeccionBacteriana+" | Estado: "+estado;
     }
 }
