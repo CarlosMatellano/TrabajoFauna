@@ -11,8 +11,8 @@ public class Mamífero extends Animal{
     
     private String lesionAtropello;
 
-    public Mamífero(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, Date fechaentrada, String lesionAtropello) {
-        super(tipoAnimal, nombre, especie, peso, gravedad, fechaentrada);
+    public Mamífero(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String lesionAtropello) {
+        super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada);
         this.lesionAtropello = lesionAtropello;
     }
 

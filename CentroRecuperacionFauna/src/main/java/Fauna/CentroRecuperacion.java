@@ -733,7 +733,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         if (tipoAlta.getSelectedItem().equals("AVE")) {
             String lesioncaza = "";
             lesioncaza = JOptionPane.showInputDialog("La lesión ha sido provocada por caza furtiva? Si/No ");
-            Ave a = new Ave("Ave",nombreA,especieA,pesoA,gravedadA,fechaEA,lesioncaza);
+            Ave a = new Ave("Ave",nombreA,especieA,pesoA,gravedadA,"Tratamiento",fechaEA,lesioncaza);
             animales.add(a);
             nombreAlta.setText("");
             especieAlta.setText("");
@@ -744,7 +744,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             if (tipoAlta.getSelectedItem().equals("MAMÍFERO")) {
                 String lesionAtropello = "";
                 lesionAtropello = JOptionPane.showInputDialog("La lesión ha sido provocada por un atropello? Si/No ");
-                Mamífero m = new Mamífero("Mamífero",nombreA,especieA,pesoA,gravedadA,fechaEA,lesionAtropello);
+                Mamífero m = new Mamífero("Mamífero",nombreA,especieA,pesoA,gravedadA,"Tratamiento",fechaEA,lesionAtropello);
                 animales.add(m);
                 nombreAlta.setText("");
                 especieAlta.setText("");
@@ -754,7 +754,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             } else {
                 String infeccionBacteriana = "";
                 infeccionBacteriana = JOptionPane.showInputDialog("La lesión ha sido provocada por una infección bacteriana? Si/No ");
-                Reptil r = new Reptil("Reptil",nombreA,especieA,pesoA,gravedadA,fechaEA,infeccionBacteriana);
+                Reptil r = new Reptil("Reptil",nombreA,especieA,pesoA,gravedadA,"Tratamiento",fechaEA,infeccionBacteriana);
                 animales.add(r);
                 nombreAlta.setText("");
                 especieAlta.setText("");

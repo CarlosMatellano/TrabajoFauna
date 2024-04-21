@@ -19,13 +19,15 @@ public class Animal {
     protected Double peso;
     protected String gravedad;
     protected Date fechaentrada;
+    protected String estado;
 
-    public Animal(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, Date fechaentrada) {
+    public Animal(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada) {
         this.tipoAnimal = tipoAnimal;
         this.nombre = nombre;
         this.especie = especie;
         this.peso = peso;
         this.gravedad = gravedad;
+        this.estado = estado;
         this.fechaentrada = fechaentrada;
     }
 
@@ -75,6 +77,14 @@ public class Animal {
 
     public void setFechaentrada(Date fechaentrada) {
         this.fechaentrada = fechaentrada;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
     
 }

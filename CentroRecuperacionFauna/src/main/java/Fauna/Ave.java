@@ -14,8 +14,8 @@ public class Ave extends Animal{
     
     private String lesioncaza;
     
-    public Ave(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, Date fechaentrada, String lesioncaza) {
-        super(tipoAnimal, nombre, especie, peso, gravedad, fechaentrada);
+    public Ave(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String lesioncaza) {
+        super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada);
         this.lesioncaza = lesioncaza;
     }    
 
