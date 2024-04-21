@@ -720,13 +720,13 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
     private void botonGAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGAltaActionPerformed
         SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy");
-        String nombreA = nombreAlta.getSelectedText();
-        String especieA = especieAlta.getSelectedText();
-        Double pesoA = Double.parseDouble(pesoAlta.getSelectedText());
-        String gravedadA = gravedadAlta.getSelectedText();
+        String nombreA = nombreAlta.getText();
+        String especieA = especieAlta.getText();
+        Double pesoA = Double.parseDouble(pesoAlta.getText());
+        String gravedadA = gravedadAlta.getText();
         Date fechaEA = null;
         try {
-            fechaEA = formato.parse(fechaEAlta.getSelectedText());
+            fechaEA = formato.parse(fechaEAlta.getText());
         } catch (ParseException ex) {
             Logger.getLogger(CentroRecuperacion.class.getName()).log(Level.SEVERE, null, ex);
         }
