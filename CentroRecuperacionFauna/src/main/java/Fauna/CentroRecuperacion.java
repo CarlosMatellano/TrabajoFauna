@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -68,14 +69,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jTextField15 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        lista3 = new javax.swing.JTextArea();
+        combitoLib = new javax.swing.JComboBox<>();
         ventanaListado = new javax.swing.JFrame();
         jPanel5 = new javax.swing.JPanel();
         jTextField12 = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        lista = new javax.swing.JTextArea();
+        listaListado = new javax.swing.JTextArea();
         botonVolver = new javax.swing.JButton();
         ventanaBaja = new javax.swing.JFrame();
         jPanel6 = new javax.swing.JPanel();
@@ -340,8 +339,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        ventanaLiberacion.setResizable(false);
-
         jPanel4.setBackground(new java.awt.Color(153, 255, 153));
 
         jTextField11.setEditable(false);
@@ -375,15 +372,11 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel10.setText("Animal:");
 
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        combitoLib.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                combitoLibActionPerformed(evt);
             }
         });
-
-        lista3.setColumns(20);
-        lista3.setRows(5);
-        jScrollPane7.setViewportView(lista3);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -393,38 +386,34 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(46, 46, 46)
-                        .addComponent(jTextField15))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(113, 113, 113)
-                        .addComponent(jTextField16))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 637, Short.MAX_VALUE)
+                        .addComponent(jButton2))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel9))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField15)
+                            .addComponent(combitoLib, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(combitoLib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(68, 68, 68)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(35, 35, 35)
                 .addComponent(jButton2)
-                .addGap(17, 17, 17))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ventanaLiberacionLayout = new javax.swing.GroupLayout(ventanaLiberacion.getContentPane());
@@ -437,7 +426,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         );
         ventanaLiberacionLayout.setVerticalGroup(
             ventanaLiberacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel5.setBackground(new java.awt.Color(153, 255, 153));
@@ -454,9 +443,9 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
-        lista.setColumns(20);
-        lista.setRows(5);
-        jScrollPane3.setViewportView(lista);
+        listaListado.setColumns(20);
+        listaListado.setRows(5);
+        jScrollPane3.setViewportView(listaListado);
 
         botonVolver.setText("Volver");
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -766,7 +755,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaAlta.setSize(594, 318);
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
-            lista.append(cadena);
+            listaListado.append(cadena);
         }
         ventanaListado.setVisible(true);
     }//GEN-LAST:event_listadoActionPerformed
@@ -777,6 +766,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_altaActionPerformed
 
     private void LiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LiberacionActionPerformed
+        for (int i = 0; i < animales.size(); i++) {
+            String cadena = animales.get(i).toString();
+            combitoLib.addItem(cadena);
+        }
         ventanaLiberacion.setSize(373, 410);
         ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
@@ -906,6 +899,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         for (int i = 0; i < animales.size(); i++) {
             System.out.println(animales.get(i));
         }
+
+        if (nombreAlta.getText() == "" || especieAlta.getText() == "" || pesoAlta.getText() == "" || gravedadAlta.getText() =="" ) {
+            JOptionPane.showMessageDialog(nombreAlta, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
+        }
     }//GEN-LAST:event_botonGAltaActionPerformed
 
     private void tipoAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAltaActionPerformed
@@ -919,10 +916,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
         ventanaListado.dispose();
     }//GEN-LAST:event_botonVolverActionPerformed
-
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
@@ -945,6 +938,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaAlta.dispose();
 
     }//GEN-LAST:event_volverAltaActionPerformed
+
+    private void combitoLibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combitoLibActionPerformed
+        
+    }//GEN-LAST:event_combitoLibActionPerformed
 
     /**
      * @param args the command line arguments
@@ -972,6 +969,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(CentroRecuperacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        ImageIcon icono = new ImageIcon("src/images/ZOO_favicon.png");
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -988,6 +986,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JButton botonGAlta;
     private javax.swing.JButton botonVolver;
     private javax.swing.JComboBox<String> combitoT;
+    private javax.swing.JComboBox<String> combitoLib;
     private javax.swing.JTextField especieAlta;
     private javax.swing.JTextField fechaEAlta;
     private javax.swing.JTextField gravedadAlta;
@@ -1014,14 +1013,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
@@ -1029,8 +1026,9 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextArea lista;
+    private javax.swing.JTextArea lista1;
     private javax.swing.JTextArea lista2;
-    private javax.swing.JTextArea lista3;
+    private javax.swing.JTextArea listaListado;
     private javax.swing.JButton listado;
     private javax.swing.JTextField nombreAlta;
     private javax.swing.JTextField pesoAlta;
