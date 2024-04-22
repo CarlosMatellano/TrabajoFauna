@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
 public class CentroRecuperacion extends javax.swing.JFrame {
 
     static ArrayList<Animal> animales = new ArrayList();
-
+    static SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
     /**
      * Creates new form CentroRecuperacion
      */
@@ -84,9 +84,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jTextField18 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jTextField19 = new javax.swing.JTextField();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        lista2 = new javax.swing.JTextArea();
+        combitoB = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         alta = new javax.swing.JButton();
         Liberacion = new javax.swing.JButton();
@@ -491,8 +489,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        ventanaBaja.setResizable(false);
-
         jPanel6.setBackground(new java.awt.Color(153, 255, 153));
 
         jTextField13.setEditable(false);
@@ -538,82 +534,61 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel12.setText("Animal:");
 
-        jTextField19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField19ActionPerformed(evt);
-            }
-        });
-
-        lista2.setColumns(20);
-        lista2.setRows(5);
-        jScrollPane6.setViewportView(lista2);
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTextField13)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(13, 13, 13)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton3)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton3)
-                            .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField18)
+                            .addComponent(combitoB, 0, 616, Short.MAX_VALUE))))
+                .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(2, 2, 2)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
+                    .addComponent(jTextField17, javax.swing.GroupLayout.DEFAULT_SIZE, 733, Short.MAX_VALUE)
                     .addGap(2, 2, 2)))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel12)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
+                    .addComponent(combitoB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(30, 30, 30)
                 .addComponent(jButton3)
-                .addContainerGap())
+                .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(2, 2, 2)
                     .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(362, Short.MAX_VALUE)))
+                    .addContainerGap(180, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout ventanaBajaLayout = new javax.swing.GroupLayout(ventanaBaja.getContentPane());
         ventanaBaja.getContentPane().setLayout(ventanaBajaLayout);
         ventanaBajaLayout.setHorizontalGroup(
             ventanaBajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ventanaBajaLayout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         ventanaBajaLayout.setVerticalGroup(
             ventanaBajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ventanaBajaLayout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -779,6 +754,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
     private void BajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaActionPerformed
         ventanaBaja.setSize(374, 410);
+        for (int i = 0; i < animales.size(); i++) {
+            String cadena = animales.get(i).toString();
+            combitoB.addItem(cadena);
+        }
         ventanaBaja.setVisible(true);
     }//GEN-LAST:event_BajaActionPerformed
 
@@ -839,16 +818,17 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField18ActionPerformed
 
     private void botonGAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGAltaActionPerformed
-        SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy");
         String nombreA = nombreAlta.getText();
         String especieA = especieAlta.getText();
         Double pesoA = Double.parseDouble(pesoAlta.getText());
         String gravedadA = gravedadAlta.getText();
         Date fechaEA = null;
         try {
-            fechaEA = formato.parse(fechaEAlta.getText());
-        } catch (ParseException ex) {
-            Logger.getLogger(CentroRecuperacion.class.getName()).log(Level.SEVERE, null, ex);
+            String fechastr = fechaEAlta.getText();
+            fechaEA = formato.parse(fechastr);     
+        } catch (NumberFormatException ex) {
+            
+        }catch (ParseException e) {
         }
         if (tipoAlta.getSelectedItem().equals("AVE")) {
             String lesioncaza = "";
@@ -918,6 +898,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         animales.get(combitoT.getSelectedIndex()).setTratamiento(jTextField3.getText());
+        animales.get(combitoT.getSelectedIndex()).setEstado("Tratamiento");
         combitoT.removeAllItems();
         ventanaTratamiento.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -927,12 +908,18 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        ventanaBaja.dispose();
+        try {
+            String fechaMstr = jTextField18.getText();
+            Date fechaM = formato.parse(fechaMstr);
+            animales.get(combitoB.getSelectedIndex()).setFechaMuerte(fechaM);
+            animales.get(combitoB.getSelectedIndex()).setEstado("Fallecido");
+            combitoB.removeAllItems();
+            ventanaBaja.dispose();
+            
+        } catch (ParseException ex) {
+            ex.getMessage();
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField19ActionPerformed
 
     private void volverAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAltaActionPerformed
         ventanaAlta.dispose();
@@ -985,6 +972,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JButton alta;
     private javax.swing.JButton botonGAlta;
     private javax.swing.JButton botonVolver;
+    private javax.swing.JComboBox<String> combitoB;
     private javax.swing.JComboBox<String> combitoLib;
     private javax.swing.JComboBox<String> combitoT;
     private javax.swing.JTextField especieAlta;
@@ -1012,7 +1000,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -1021,11 +1008,9 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField9;
-    private javax.swing.JTextArea lista2;
     private javax.swing.JTextArea listaListado;
     private javax.swing.JButton listado;
     private javax.swing.JTextField nombreAlta;
