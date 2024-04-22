@@ -755,7 +755,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaAlta.setSize(594, 318);
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
-            listaListado.append(cadena +"\n");
+            listaListado.append(cadena + "\n");
         }
         ventanaListado.setVisible(true);
     }//GEN-LAST:event_listadoActionPerformed
@@ -770,6 +770,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             String cadena = animales.get(i).toString();
             combitoLib.addItem(cadena);
         }
+        combitoLib.getSelectedItem();
+
         ventanaLiberacion.setSize(373, 410);
         ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
@@ -871,7 +873,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 } else {
                     lesionAtropello = "No";
                 }
-                Mamífero m = new Mamífero("Mamífero", nombreA, especieA, pesoA, gravedadA, "Tratamiento", fechaEA, lesionAtropello);
+                Mamifero m = new Mamifero("Mamífero", nombreA, especieA, pesoA, gravedadA, "Tratamiento", fechaEA, lesionAtropello);
                 animales.add(m);
                 nombreAlta.setText("");
                 especieAlta.setText("");
@@ -900,7 +902,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             System.out.println(animales.get(i));
         }
 
-        if (nombreAlta.getText() == "" || especieAlta.getText() == "" || pesoAlta.getText() == "" || gravedadAlta.getText() =="" ) {
+        if (nombreAlta.getText() == "" || especieAlta.getText() == "" || pesoAlta.getText() == "" || gravedadAlta.getText() == "") {
             JOptionPane.showMessageDialog(nombreAlta, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
         }
     }//GEN-LAST:event_botonGAltaActionPerformed
@@ -942,7 +944,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_volverAltaActionPerformed
 
     private void combitoLibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combitoLibActionPerformed
-        
+
     }//GEN-LAST:event_combitoLibActionPerformed
 
     /**
@@ -987,8 +989,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JButton alta;
     private javax.swing.JButton botonGAlta;
     private javax.swing.JButton botonVolver;
-    private javax.swing.JComboBox<String> combitoT;
     private javax.swing.JComboBox<String> combitoLib;
+    private javax.swing.JComboBox<String> combitoT;
     private javax.swing.JTextField especieAlta;
     private javax.swing.JTextField fechaEAlta;
     private javax.swing.JTextField gravedadAlta;
@@ -1027,8 +1029,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField9;
-    private javax.swing.JTextArea lista;
-    private javax.swing.JTextArea lista1;
     private javax.swing.JTextArea lista2;
     private javax.swing.JTextArea listaListado;
     private javax.swing.JButton listado;
