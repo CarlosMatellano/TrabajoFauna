@@ -770,6 +770,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             String cadena = animales.get(i).toString();
             combitoLib.addItem(cadena);
         }
+        combitoLib.getSelectedItem();
+        
         ventanaLiberacion.setSize(373, 410);
         ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
@@ -985,8 +987,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JButton alta;
     private javax.swing.JButton botonGAlta;
     private javax.swing.JButton botonVolver;
-    private javax.swing.JComboBox<String> combitoT;
     private javax.swing.JComboBox<String> combitoLib;
+    private javax.swing.JComboBox<String> combitoT;
     private javax.swing.JTextField especieAlta;
     private javax.swing.JTextField fechaEAlta;
     private javax.swing.JTextField gravedadAlta;
@@ -1025,8 +1027,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField9;
-    private javax.swing.JTextArea lista;
-    private javax.swing.JTextArea lista1;
     private javax.swing.JTextArea lista2;
     private javax.swing.JTextArea listaListado;
     private javax.swing.JButton listado;
