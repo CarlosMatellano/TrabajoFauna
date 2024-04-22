@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -72,12 +73,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jTextField16 = new javax.swing.JTextField();
         jScrollPane7 = new javax.swing.JScrollPane();
-        lista3 = new javax.swing.JTextArea();
+        listaLib = new javax.swing.JTextArea();
         ventanaListado = new javax.swing.JFrame();
         jPanel5 = new javax.swing.JPanel();
         jTextField12 = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        lista = new javax.swing.JTextArea();
+        listaListado = new javax.swing.JTextArea();
         botonVolver = new javax.swing.JButton();
         ventanaBaja = new javax.swing.JFrame();
         jPanel6 = new javax.swing.JPanel();
@@ -390,9 +391,9 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
-        lista3.setColumns(20);
-        lista3.setRows(5);
-        jScrollPane7.setViewportView(lista3);
+        listaLib.setColumns(20);
+        listaLib.setRows(5);
+        jScrollPane7.setViewportView(listaLib);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -463,9 +464,9 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
-        lista.setColumns(20);
-        lista.setRows(5);
-        jScrollPane3.setViewportView(lista);
+        listaListado.setColumns(20);
+        listaListado.setRows(5);
+        jScrollPane3.setViewportView(listaListado);
 
         botonVolver.setText("Volver");
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -772,7 +773,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaAlta.setSize(594, 318);
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
-            lista.append(cadena);
+            listaListado.append(cadena);
         }
         ventanaListado.setVisible(true);
     }//GEN-LAST:event_listadoActionPerformed
@@ -783,6 +784,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_altaActionPerformed
 
     private void LiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LiberacionActionPerformed
+        for (int i = 0; i < animales.size(); i++) {
+            String cadena = animales.get(i).toString();
+            listaLib.append(cadena);
+        }
         ventanaLiberacion.setSize(373, 410);
         ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
@@ -912,6 +917,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         for (int i = 0; i < animales.size(); i++) {
             System.out.println(animales.get(i));
         }
+
+        if (nombreAlta.getText() == "" || especieAlta.getText() == "" || pesoAlta.getText() == "" || gravedadAlta.getText() =="" ) {
+            JOptionPane.showMessageDialog(nombreAlta, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
+        }
     }//GEN-LAST:event_botonGAltaActionPerformed
 
     private void tipoAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAltaActionPerformed
@@ -977,6 +986,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(CentroRecuperacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        ImageIcon icono = new ImageIcon("src/images/ZOO_favicon.png");
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1034,10 +1044,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField9;
-    private javax.swing.JTextArea lista;
     private javax.swing.JTextArea lista1;
     private javax.swing.JTextArea lista2;
-    private javax.swing.JTextArea lista3;
+    private javax.swing.JTextArea listaLib;
+    private javax.swing.JTextArea listaListado;
     private javax.swing.JButton listado;
     private javax.swing.JTextField nombreAlta;
     private javax.swing.JTextField pesoAlta;
