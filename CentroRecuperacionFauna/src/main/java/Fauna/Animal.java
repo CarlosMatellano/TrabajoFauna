@@ -20,7 +20,12 @@ public class Animal {
     protected String gravedad;
     protected Date fechaentrada;
     protected String estado;
-
+    protected String tratamiento;
+    protected Date fechaLiberacion;
+    protected Date fechaMuerte;
+    
+    
+    //Constructor Principal
     public Animal(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada) {
         this.tipoAnimal = tipoAnimal;
         this.nombre = nombre;
@@ -31,6 +36,55 @@ public class Animal {
         this.fechaentrada = fechaentrada;
     }
 
+    //Constructor Tratamiento
+    public Animal(String tipoAnimal, String nombre, String especie, String gravedad, String tratamiento) {
+        this.tipoAnimal = tipoAnimal;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.gravedad = gravedad;
+        this.tratamiento = tratamiento;
+    }
+
+    //Constructor Liberaión
+    public Animal(String tipoAnimal, String nombre, String especie, Date fechaLiberacion) {
+        this.tipoAnimal = tipoAnimal;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.fechaLiberacion = fechaLiberacion;
+    }
+
+    public Animal(String tipoAnimal, String nombre, String especie, Double peso, Date fechaMuerte) {
+        this.tipoAnimal = tipoAnimal;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.peso = peso;
+        this.fechaMuerte = fechaMuerte;
+    }
+    
+    public String getTratamiento() {
+        return tratamiento;
+    }
+
+    public void setTratamiento(String tratamiento) {
+        this.tratamiento = tratamiento;
+    }
+
+    public Date getFechaLiberacion() {
+        return fechaLiberacion;
+    }
+
+    public void setFechaLiberacion(Date fechaLiberacion) {
+        this.fechaLiberacion = fechaLiberacion;
+    }
+
+    public Date getFechaMuerte() {
+        return fechaMuerte;
+    }
+
+    public void setFechaMuerte(Date fechaMuerte) {
+        this.fechaMuerte = fechaMuerte;
+    }
+    
     public String getNombre() {
         return nombre;
     }

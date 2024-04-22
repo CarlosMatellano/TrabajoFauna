@@ -878,7 +878,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         } else {
             if (tipoAlta.getSelectedItem().equals("MAMÍFERO")) {
                 String lesionAtropello = "";
-                int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por caza furtiva?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
+                int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por atropello?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
                 if (opcion == JOptionPane.YES_OPTION) {
                     lesionAtropello = "Si";
                 } else {
@@ -893,7 +893,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 fechaEAlta.setText("dd/mm/aaaa");
             } else {
                 String infeccionBacteriana = "";
-                int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por caza furtiva?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
+                int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por infección bacteriana?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
                 if (opcion == JOptionPane.YES_OPTION) {
                     infeccionBacteriana = "Si";
                 } else {
