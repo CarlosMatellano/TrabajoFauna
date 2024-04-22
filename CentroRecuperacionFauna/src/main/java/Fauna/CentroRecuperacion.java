@@ -747,7 +747,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
             combitoT.addItem(cadena);
-        }        
+        }
         ventanaTratamiento.setVisible(true);
     }//GEN-LAST:event_tratamientoActionPerformed
 
@@ -755,7 +755,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaAlta.setSize(594, 318);
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
-            listaListado.append(cadena +"\n");
+            listaListado.append(cadena + "\n");
         }
         ventanaListado.setVisible(true);
     }//GEN-LAST:event_listadoActionPerformed
@@ -771,7 +771,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             combitoLib.addItem(cadena);
         }
         combitoLib.getSelectedItem();
-        
+
         ventanaLiberacion.setSize(373, 410);
         ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
@@ -873,7 +873,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 } else {
                     lesionAtropello = "No";
                 }
-                Mamífero m = new Mamífero("Mamífero", nombreA, especieA, pesoA, gravedadA, "Tratamiento", fechaEA, lesionAtropello);
+                Mamifero m = new Mamifero("Mamífero", nombreA, especieA, pesoA, gravedadA, "Tratamiento", fechaEA, lesionAtropello);
                 animales.add(m);
                 nombreAlta.setText("");
                 especieAlta.setText("");
@@ -902,7 +902,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             System.out.println(animales.get(i));
         }
 
-        if (nombreAlta.getText() == "" || especieAlta.getText() == "" || pesoAlta.getText() == "" || gravedadAlta.getText() =="" ) {
+        if (nombreAlta.getText() == "" || especieAlta.getText() == "" || pesoAlta.getText() == "" || gravedadAlta.getText() == "") {
             JOptionPane.showMessageDialog(nombreAlta, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
         }
     }//GEN-LAST:event_botonGAltaActionPerformed
@@ -944,7 +944,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_volverAltaActionPerformed
 
     private void combitoLibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combitoLibActionPerformed
-        
+
     }//GEN-LAST:event_combitoLibActionPerformed
 
     /**
