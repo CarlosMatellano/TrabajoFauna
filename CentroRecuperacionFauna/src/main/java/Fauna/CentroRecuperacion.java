@@ -20,11 +20,13 @@ import javax.swing.JOptionPane;
 public class CentroRecuperacion extends javax.swing.JFrame {
 
     static ArrayList<Animal> animales = new ArrayList();
+    static ImageIcon icono = new ImageIcon("src/images/ZOO_favicon.png");
 
     /**
      * Creates new form CentroRecuperacion
      */
     public CentroRecuperacion() {
+        setIconImage(icono.getImage());
         initComponents();
     }
 
@@ -420,14 +422,14 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaLiberacion.getContentPane().setLayout(ventanaLiberacionLayout);
         ventanaLiberacionLayout.setHorizontalGroup(
             ventanaLiberacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ventanaLiberacionLayout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         ventanaLiberacionLayout.setVerticalGroup(
             ventanaLiberacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        ventanaListado.setResizable(false);
 
         jPanel5.setBackground(new java.awt.Color(153, 255, 153));
 
@@ -745,39 +747,46 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tratamientoActionPerformed
+        ventanaTratamiento.setIconImage(icono.getImage());
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
             combitoT.addItem(cadena);
         }
+        ventanaTratamiento.setSize(1200, 375);
         ventanaTratamiento.setVisible(true);
     }//GEN-LAST:event_tratamientoActionPerformed
 
     private void listadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoActionPerformed
-        ventanaAlta.setSize(594, 318);
+        ventanaListado.setIconImage(icono.getImage());
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
             listaListado.append(cadena + "\n");
         }
+                ventanaListado.setSize(1100, 375);
+
         ventanaListado.setVisible(true);
     }//GEN-LAST:event_listadoActionPerformed
 
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
+        ventanaAlta.setIconImage(icono.getImage());
         ventanaAlta.setSize(445, 445);
         ventanaAlta.setVisible(true);
     }//GEN-LAST:event_altaActionPerformed
 
     private void LiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LiberacionActionPerformed
+        ventanaLiberacion.setIconImage(icono.getImage());
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
             combitoLib.addItem(cadena);
         }
         combitoLib.getSelectedItem();
-
-        ventanaLiberacion.setSize(373, 410);
+        ventanaLiberacion.setSize(735, 325);
         ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
 
     private void BajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaActionPerformed
+        ventanaBaja.setIconImage(icono.getImage());
+
         ventanaBaja.setSize(374, 410);
         ventanaBaja.setVisible(true);
     }//GEN-LAST:event_BajaActionPerformed
@@ -969,12 +978,13 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(CentroRecuperacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        ImageIcon icono = new ImageIcon("src/images/ZOO_favicon.png");
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CentroRecuperacion().setVisible(true);
+
             }
         });
     }
