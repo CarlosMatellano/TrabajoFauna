@@ -914,6 +914,17 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            String fechaLstr = jTextField15.getText();
+            Date fechaL = formato.parse(fechaLstr);
+            animales.get(combitoB.getSelectedIndex()).setFechaMuerte(fechaL);
+            animales.get(combitoB.getSelectedIndex()).setEstado("Liberado");
+            combitoB.removeAllItems();
+            ventanaBaja.dispose();
+            
+        } catch (ParseException ex) {
+            ex.getMessage();
+        }        
         ventanaLiberacion.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
