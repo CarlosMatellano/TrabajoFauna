@@ -443,6 +443,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
+        listaListado.setEditable(false);
         listaListado.setColumns(20);
         listaListado.setRows(5);
         jScrollPane3.setViewportView(listaListado);

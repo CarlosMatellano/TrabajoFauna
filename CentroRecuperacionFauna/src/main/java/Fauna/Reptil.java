@@ -44,10 +44,10 @@ public class Reptil extends Animal {
         if (tratamiento != null) {
             texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Infección Bacteriana: " + infeccionBacteriana + " | Estado: " + estado + " | Tratamiento: " + tratamiento;
         } else {
-            if (fechaMuerte == null && tratamiento == null) {
+            if (fechaLiberacion != null) {
                 texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Infección Bacteriana: " + infeccionBacteriana + " | Estado: " + estado + " | Fecha Liberación: " + fechaLiberacion;
             } else {
-                if (tratamiento == null && fechaLiberacion == null) {
+                if (fechaMuerte != null) {
                     texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Infección Bacteriana: " + infeccionBacteriana + " | Estado: " + estado + " | Fecha Fallecimiento: " + fechaMuerte;
 
                 } else {
