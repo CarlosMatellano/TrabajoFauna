@@ -755,7 +755,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaAlta.setSize(594, 318);
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
-            listaListado.append(cadena);
+            listaListado.append(cadena +"\n");
         }
         ventanaListado.setVisible(true);
     }//GEN-LAST:event_listadoActionPerformed
@@ -914,11 +914,13 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_gravedadAltaActionPerformed
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        listaListado.setText("");
         ventanaListado.dispose();
     }//GEN-LAST:event_botonVolverActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        animales.get(combitoT.getSelectedIndex()).setTratamiento(jTextField3.getText());
+        combitoT.removeAllItems();
         ventanaTratamiento.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
