@@ -19,9 +19,20 @@ public class Ave extends Animal{
         this.lesioncaza = lesioncaza;
     }    
 
-    public Ave(String tipoAnimal, String nombre, String especie, String gravedad, String tratamiento) {
-        super(tipoAnimal, nombre, especie, gravedad, tratamiento);
+    public Ave(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento, String lesioncaza) {
+        super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada, tratamiento);
+        this.lesioncaza = lesioncaza;
     }
+    
+    public Ave(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaLiberacion) {
+        super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada, fechaLiberacion);
+        this.lesioncaza = lesioncaza;
+    }
+    
+    public Ave(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaMuerte) {
+        super(tipoAnimal, nombre, especie, gravedad, estado, fechaentrada, fechaMuerte);
+        this.lesioncaza = lesioncaza;
+    }  
     
     public String getLesion() {
         return lesioncaza;
@@ -35,9 +46,17 @@ public class Ave extends Animal{
     public String toString() {
         String texto;
         if (fechaMuerte == null && fechaLiberacion == null) {
-            texto = "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Gravedad: "+gravedad+" | Tratamiento: "+tratamiento;
-        } else {
-            texto = "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesion caza: "+lesioncaza+" | Estado: "+estado;
+            texto = "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesion caza: "+lesioncaza+" | Estado: "+estado+" | Tratamiento: "+tratamiento;
+        } else {if (fechaMuerte == null && tratamiento == null) {
+                texto = "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesion caza: "+lesioncaza+" | Estado: "+estado+" | Fecha Liberación: "+fechaLiberacion;
+            } else {
+            if (tratamiento == null && fechaLiberacion == null) {
+                texto = "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesion caza: "+lesioncaza+" | Estado: "+estado+" | Fecha Fallecimiento: "+fechaMuerte;
+
+            } else {
+                texto = "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesion caza: "+lesioncaza+" | Estado: "+estado;
+            }
+            }
         }
         return texto;
     }

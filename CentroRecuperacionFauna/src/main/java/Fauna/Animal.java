@@ -37,27 +37,36 @@ public class Animal {
     }
 
     //Constructor Tratamiento
-    public Animal(String tipoAnimal, String nombre, String especie, String gravedad, String tratamiento) {
-        this.tipoAnimal = tipoAnimal;
-        this.nombre = nombre;
-        this.especie = especie;
-        this.gravedad = gravedad;
-        this.tratamiento = tratamiento;
-    }
-
-    //Constructor Liberaión
-    public Animal(String tipoAnimal, String nombre, String especie, Date fechaLiberacion) {
-        this.tipoAnimal = tipoAnimal;
-        this.nombre = nombre;
-        this.especie = especie;
-        this.fechaLiberacion = fechaLiberacion;
-    }
-
-    public Animal(String tipoAnimal, String nombre, String especie, Double peso, Date fechaMuerte) {
+    public Animal(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento) {
         this.tipoAnimal = tipoAnimal;
         this.nombre = nombre;
         this.especie = especie;
         this.peso = peso;
+        this.gravedad = gravedad;
+        this.estado = estado;
+        this.fechaentrada = fechaentrada;
+        this.tratamiento = tratamiento;
+    }
+
+    //Constructor Liberaión
+    public Animal(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, Date fechaLiberacion) {
+        this.tipoAnimal = tipoAnimal;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.peso = peso;
+        this.gravedad = gravedad;
+        this.estado = estado;
+        this.fechaentrada = fechaentrada;
+        this.fechaLiberacion = fechaLiberacion;
+    }
+
+    public Animal(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, Date fechaMuerte) {
+        this.tipoAnimal = tipoAnimal;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.gravedad = gravedad;
+        this.estado = estado;
+        this.fechaentrada = fechaentrada;
         this.fechaMuerte = fechaMuerte;
     }
     
