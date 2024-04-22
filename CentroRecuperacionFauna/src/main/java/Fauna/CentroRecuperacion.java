@@ -747,7 +747,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
             combitoT.addItem(cadena);
-        }        
+        }
         ventanaTratamiento.setVisible(true);
     }//GEN-LAST:event_tratamientoActionPerformed
 

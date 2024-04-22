@@ -24,12 +24,12 @@ public class Ave extends Animal{
         this.lesioncaza = lesioncaza;
     }
     
-    public Ave(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaLiberacion) {
+    public Ave(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaLiberacion, String lesioncaza) {
         super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada, fechaLiberacion);
         this.lesioncaza = lesioncaza;
     }
     
-    public Ave(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaMuerte) {
+    public Ave(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaMuerte, String lesioncaza) {
         super(tipoAnimal, nombre, especie, gravedad, estado, fechaentrada, fechaMuerte);
         this.lesioncaza = lesioncaza;
     }  
@@ -45,12 +45,12 @@ public class Ave extends Animal{
     @Override
     public String toString() {
         String texto;
-        if (fechaMuerte == null && fechaLiberacion == null) {
+        if (tratamiento != null) {
             texto = "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesion caza: "+lesioncaza+" | Estado: "+estado+" | Tratamiento: "+tratamiento;
-        } else {if (fechaMuerte == null && tratamiento == null) {
+        } else {if (fechaLiberacion != null) {
                 texto = "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesion caza: "+lesioncaza+" | Estado: "+estado+" | Fecha Liberación: "+fechaLiberacion;
             } else {
-            if (tratamiento == null && fechaLiberacion == null) {
+            if (fechaMuerte != null) {
                 texto = "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesion caza: "+lesioncaza+" | Estado: "+estado+" | Fecha Fallecimiento: "+fechaMuerte;
 
             } else {
