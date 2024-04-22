@@ -148,6 +148,5 @@ public class Animal {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-    
+    }  
 }

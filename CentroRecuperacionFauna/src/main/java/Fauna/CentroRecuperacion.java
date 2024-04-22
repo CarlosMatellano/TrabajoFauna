@@ -897,11 +897,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 fechaEAlta.setText("dd/mm/aaaa");
             }
         }
-
-        for (int i = 0; i < animales.size(); i++) {
-            System.out.println(animales.get(i));
-        }
-
         if (nombreAlta.getText() == "" || especieAlta.getText() == "" || pesoAlta.getText() == "" || gravedadAlta.getText() == "") {
             JOptionPane.showMessageDialog(nombreAlta, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
         }
