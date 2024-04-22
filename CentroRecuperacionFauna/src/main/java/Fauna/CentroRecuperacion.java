@@ -756,6 +756,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
     private void listadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoActionPerformed
         ventanaAlta.setSize(594, 318);
+        for (int i = 0; i < animales.size(); i++) {
+            String cadena = animales.get(i).toString();
+            lista.append(cadena);
+        }
         ventanaListado.setVisible(true);
     }//GEN-LAST:event_listadoActionPerformed
 
