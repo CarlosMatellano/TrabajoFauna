@@ -756,14 +756,14 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             combitoLib.addItem(cadena);
         }
         combitoLib.getSelectedItem();
-        ventanaLiberacion.setSize(735, 325);
+        ventanaLiberacion.setSize(735, 315);
         ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
 
     private void BajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaActionPerformed
         ventanaBaja.setIconImage(icono.getImage());
 
-        ventanaBaja.setSize(374, 410);
+        ventanaBaja.setSize(1100, 290);
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
             combitoB.addItem(cadena);
