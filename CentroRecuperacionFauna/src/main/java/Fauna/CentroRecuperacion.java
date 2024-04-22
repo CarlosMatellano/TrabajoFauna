@@ -60,9 +60,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        lista1 = new javax.swing.JTextArea();
+        combitoT = new javax.swing.JComboBox<>();
         ventanaLiberacion = new javax.swing.JFrame();
         jPanel4 = new javax.swing.JPanel();
         jTextField11 = new javax.swing.JTextField();
@@ -293,10 +291,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("Animal:");
 
-        lista1.setColumns(20);
-        lista1.setRows(5);
-        jScrollPane5.setViewportView(lista1);
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -305,35 +299,32 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField3))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton1))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel8)
-                        .addGap(53, 53, 53)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE)))
+                        .addGap(47, 47, 47)
+                        .addComponent(combitoT, 0, 482, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(12, 12, 12)
+                        .addComponent(jTextField3)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(combitoT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
@@ -764,7 +755,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tratamientoActionPerformed
-
+        for (int i = 0; i < animales.size(); i++) {
+            String cadena = animales.get(i).toString();
+            combitoT.addItem(cadena);
+        }        
         ventanaTratamiento.setVisible(true);
     }//GEN-LAST:event_tratamientoActionPerformed
 
@@ -931,6 +925,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField16ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
         ventanaTratamiento.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -992,6 +987,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JButton alta;
     private javax.swing.JButton botonGAlta;
     private javax.swing.JButton botonVolver;
+    private javax.swing.JComboBox<String> combitoT;
     private javax.swing.JTextField especieAlta;
     private javax.swing.JTextField fechaEAlta;
     private javax.swing.JTextField gravedadAlta;
@@ -1017,7 +1013,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextField jTextField1;
@@ -1032,10 +1027,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextArea lista;
-    private javax.swing.JTextArea lista1;
     private javax.swing.JTextArea lista2;
     private javax.swing.JTextArea lista3;
     private javax.swing.JButton listado;

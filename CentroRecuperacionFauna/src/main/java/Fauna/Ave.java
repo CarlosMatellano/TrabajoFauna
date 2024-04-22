@@ -19,6 +19,10 @@ public class Ave extends Animal{
         this.lesioncaza = lesioncaza;
     }    
 
+    public Ave(String tipoAnimal, String nombre, String especie, String gravedad, String tratamiento) {
+        super(tipoAnimal, nombre, especie, gravedad, tratamiento);
+    }
+    
     public String getLesion() {
         return lesioncaza;
     }
@@ -29,6 +33,12 @@ public class Ave extends Animal{
 
     @Override
     public String toString() {
-        return "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesion caza: "+lesioncaza+" | Estado: "+estado;
+        String texto;
+        if (fechaMuerte == null && fechaLiberacion == null) {
+            texto = "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Gravedad: "+gravedad+" | Tratamiento: "+tratamiento;
+        } else {
+            texto = "TP: "+tipoAnimal+" | Nombre: "+nombre+" | Especie: "+especie+" | Peso: "+peso+" | Gravedad: "+gravedad+" | Fecha Entrada: "+fechaentrada+" | Lesion caza: "+lesioncaza+" | Estado: "+estado;
+        }
+        return texto;
     }
 }
