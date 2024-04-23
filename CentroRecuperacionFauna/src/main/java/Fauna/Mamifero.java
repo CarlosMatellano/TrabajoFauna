@@ -20,15 +20,15 @@ public class Mamifero extends Animal {
         this.lesionAtropello = lesionAtropello;
     }
 
-    public Mamifero(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaLiberacion, String lesionAtropello) {
-        super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada, fechaLiberacion);
-        this.lesionAtropello = lesionAtropello;
+   public Mamifero(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaLiberacion, String veterinario, String lesioncaza) {
+        super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada, fechaLiberacion, veterinario);
+        this.lesionAtropello = lesioncaza;
+    }
+    public Mamifero(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaMuerte, String veterinario, String lesioncaza) {
+        super(tipoAnimal, nombre, especie, gravedad, estado, fechaentrada, fechaMuerte, veterinario);
+        this.lesionAtropello = lesioncaza;
     }
 
-    public Mamifero(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaMuerte, String lesionAtropello) {
-        super(tipoAnimal, nombre, especie, gravedad, estado, fechaentrada, fechaMuerte);
-        this.lesionAtropello = lesionAtropello;
-    }
 
     public String getLesionAtropello() {
         return lesionAtropello;
@@ -45,10 +45,10 @@ public class Mamifero extends Animal {
             texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Lesión atropello: " + lesionAtropello + " | Estado: " + estado + " | Tratamiento: " + tratamiento;
         } else {
             if (fechaLiberacion != null) {
-                texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Lesión atropello: " + lesionAtropello + " | Estado: " + estado + " | Fecha Liberación: " + fechaLiberacion;
+                texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Lesión atropello: " + lesionAtropello + " | Estado: " + estado + " | Fecha Liberación: " + fechaLiberacion +" | Veterianario: "+veterinario;
             } else {
                 if (fechaMuerte != null) {
-                    texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Lesión atropello: " + lesionAtropello + " | Estado: " + estado + " | Fecha Fallecimiento: " + fechaMuerte;
+                    texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Lesión atropello: " + lesionAtropello + " | Estado: " + estado + " | Fecha Fallecimiento: " + fechaMuerte +" | Veterianario: "+veterinario;
 
                 } else {
                     texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Lesión atropello: " + lesionAtropello + " | Estado: " + estado;
