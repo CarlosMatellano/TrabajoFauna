@@ -20,15 +20,15 @@ public class Reptil extends Animal {
         this.infeccionBacteriana = infeccionBacteriana;
     }
 
-    public Reptil(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaLiberacion, String infeccionBacteriana) {
-        super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada, fechaLiberacion);
-        this.infeccionBacteriana = infeccionBacteriana;
+     public Reptil(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaLiberacion, String veterinario, String lesioncaza) {
+        super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada, fechaLiberacion, veterinario);
+        this.infeccionBacteriana = lesioncaza;
+    }
+    public Reptil(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaMuerte, String veterinario, String lesioncaza) {
+        super(tipoAnimal, nombre, especie, gravedad, estado, fechaentrada, fechaMuerte, veterinario);
+        this.infeccionBacteriana = lesioncaza;
     }
 
-    public Reptil(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaMuerte, String infeccionBacteriana) {
-        super(tipoAnimal, nombre, especie, gravedad, estado, fechaentrada, fechaMuerte);
-        this.infeccionBacteriana = infeccionBacteriana;
-    }
 
     public String getInfeccionBacteriana() {
         return infeccionBacteriana;
@@ -45,10 +45,10 @@ public class Reptil extends Animal {
             texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Infección Bacteriana: " + infeccionBacteriana + " | Estado: " + estado + " | Tratamiento: " + tratamiento;
         } else {
             if (fechaLiberacion != null) {
-                texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Infección Bacteriana: " + infeccionBacteriana + " | Estado: " + estado + " | Fecha Liberación: " + fechaLiberacion;
+                texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Infección Bacteriana: " + infeccionBacteriana + " | Estado: " + estado + " | Fecha Liberación: " + fechaLiberacion +" | Veterianario: "+veterinario;
             } else {
                 if (fechaMuerte != null) {
-                    texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Infección Bacteriana: " + infeccionBacteriana + " | Estado: " + estado + " | Fecha Fallecimiento: " + fechaMuerte;
+                    texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Infección Bacteriana: " + infeccionBacteriana + " | Estado: " + estado + " | Fecha Fallecimiento: " + fechaMuerte +" | Veterianario: "+veterinario;
 
                 } else {
                     texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Infección Bacteriana: " + infeccionBacteriana + " | Estado: " + estado;
