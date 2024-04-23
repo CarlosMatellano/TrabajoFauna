@@ -16,19 +16,29 @@ import javax.swing.JOptionPane;
 
 /**
  * Clase que representa el centro de recuperación animal
- * 
+ *
  * Esta clase es un marco principal para una app utilizando swing.
- * 
+ *
  * @author Hugo Mazarío Ros y Carlos Matellano Villacampa 1ºDAM
+ * @atribute animales ArrayList que almacena los animales en el centro de
+ * recuperación.
+ * @atribute icono Icono utilizado para la interfaz gráfica del centro de
+ * recuperación.
+ * @atribute formato Formato de fecha utilizado en el programa
+ *
  */
 public class CentroRecuperacion extends javax.swing.JFrame {
 
     static ArrayList<Animal> animales = new ArrayList();
+
     static ImageIcon icono = new ImageIcon("src/images/ZOO_favicon.png");
 
-
     static SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-    
+
+    /**
+     *
+     * Inicializa la interfaz gráfica y establece el icono de la ventana.
+     */
     public CentroRecuperacion() {
         setIconImage(icono.getImage());
         initComponents();
@@ -770,7 +780,13 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+     * Realiza acciones al ocurrir un evento en el botón de tratamiento.
+     * Actualiza la ventana de tratamiento, añade elementos al combobox y la
+     * muestra.
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void tratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tratamientoActionPerformed
         ventanaTratamiento.setIconImage(icono.getImage());
         for (int i = 0; i < animales.size(); i++) {
@@ -779,7 +795,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         }
         ventanaTratamiento.setVisible(true);
     }//GEN-LAST:event_tratamientoActionPerformed
-
+    /**
+     * Realiza acciones al ocurrir un evento en el botón de listado. Actualiza
+     * la ventana de listado, añade elementos al área de texto y la muestra.
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void listadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoActionPerformed
         ventanaListado.setIconImage(icono.getImage());
         for (int i = 0; i < animales.size(); i++) {
@@ -789,12 +810,23 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
         ventanaListado.setVisible(true);
     }//GEN-LAST:event_listadoActionPerformed
-
+    /**
+     * Realiza acciones al ocurrir un evento en el botón de alta. Actualiza la
+     * ventana de alta y la muestra.
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
         ventanaAlta.setIconImage(icono.getImage());
         ventanaAlta.setVisible(true);
     }//GEN-LAST:event_altaActionPerformed
-
+    /**
+     * Realiza acciones al ocurrir un evento en el botón de liberación.
+     * Actualiza la ventana de liberación, añade elementos al combobox y la
+     * muestra.
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void LiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LiberacionActionPerformed
         ventanaLiberacion.setIconImage(icono.getImage());
         for (int i = 0; i < animales.size(); i++) {
@@ -802,21 +834,30 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             combitoLib.addItem(cadena);
         }
         combitoLib.getSelectedItem();
-        
+
         ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
-
+    /**
+     * Realiza acciones al ocurrir un evento en el botón de baja. Actualiza la
+     * ventana de baja, añade elementos al combobox y la muestra.
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void BajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaActionPerformed
         ventanaBaja.setIconImage(icono.getImage());
 
-        
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
             combitoB.addItem(cadena);
         }
         ventanaBaja.setVisible(true);
     }//GEN-LAST:event_BajaActionPerformed
-
+    /**
+     * Realiza acciones al ocurrir un evento en el botón de salida. Termina la
+     * ejecución del programa al cerrar la aplicación.
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_salirActionPerformed
@@ -880,66 +921,65 @@ public class CentroRecuperacion extends javax.swing.JFrame {
  */
     private void botonGAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGAltaActionPerformed
         try {
-        String nombreA = nombreAlta.getText();
-        String especieA = especieAlta.getText();
-        Double pesoA = Double.parseDouble(pesoAlta.getText());
-        String gravedadA = gravedadAlta.getText();
-        Date fechaEA = null;
-        String fechastr = fechaEAlta.getText();
-        fechaEA = formato.parse(fechastr);
-        if (tipoAlta.getSelectedItem().equals("AVE")) {
-            String lesioncaza = "";
-            int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por caza furtiva?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
-            if (opcion == JOptionPane.YES_OPTION) {
-                lesioncaza = "Si";
-            } else {
-                lesioncaza = "No";
-            }
-            Ave a = new Ave("Ave", nombreA, especieA, pesoA, gravedadA, "Tratamiento", fechaEA, lesioncaza);
-            animales.add(a);
-            nombreAlta.setText("");
-            especieAlta.setText("");
-            pesoAlta.setText("");
-            gravedadAlta.setText("");
-            fechaEAlta.setText("dd/mm/aaaa");
-        } else {
-            if (tipoAlta.getSelectedItem().equals("MAMÍFERO")) {
-                String lesionAtropello = "";
-                int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por atropello?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
+            String nombreA = nombreAlta.getText();
+            String especieA = especieAlta.getText();
+            Double pesoA = Double.parseDouble(pesoAlta.getText());
+            String gravedadA = gravedadAlta.getText();
+            Date fechaEA = null;
+            String fechastr = fechaEAlta.getText();
+            fechaEA = formato.parse(fechastr);
+            if (tipoAlta.getSelectedItem().equals("AVE")) {
+                String lesioncaza = "";
+                int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por caza furtiva?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
                 if (opcion == JOptionPane.YES_OPTION) {
-                    lesionAtropello = "Si";
+                    lesioncaza = "Si";
                 } else {
-                    lesionAtropello = "No";
+                    lesioncaza = "No";
                 }
-                Mamifero m = new Mamifero("Mamífero", nombreA, especieA, pesoA, gravedadA, "Tratamiento", fechaEA, lesionAtropello);
-                animales.add(m);
+                Ave a = new Ave("Ave", nombreA, especieA, pesoA, gravedadA, "Tratamiento", fechaEA, lesioncaza);
+                animales.add(a);
                 nombreAlta.setText("");
                 especieAlta.setText("");
                 pesoAlta.setText("");
                 gravedadAlta.setText("");
                 fechaEAlta.setText("dd/mm/aaaa");
             } else {
-                String infeccionBacteriana = "";
-                int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por infección bacteriana?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
-                if (opcion == JOptionPane.YES_OPTION) {
-                    infeccionBacteriana = "Si";
+                if (tipoAlta.getSelectedItem().equals("MAMÍFERO")) {
+                    String lesionAtropello = "";
+                    int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por atropello?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
+                    if (opcion == JOptionPane.YES_OPTION) {
+                        lesionAtropello = "Si";
+                    } else {
+                        lesionAtropello = "No";
+                    }
+                    Mamifero m = new Mamifero("Mamífero", nombreA, especieA, pesoA, gravedadA, "Tratamiento", fechaEA, lesionAtropello);
+                    animales.add(m);
+                    nombreAlta.setText("");
+                    especieAlta.setText("");
+                    pesoAlta.setText("");
+                    gravedadAlta.setText("");
+                    fechaEAlta.setText("dd/mm/aaaa");
                 } else {
-                    infeccionBacteriana = "No";
+                    String infeccionBacteriana = "";
+                    int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por infección bacteriana?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
+                    if (opcion == JOptionPane.YES_OPTION) {
+                        infeccionBacteriana = "Si";
+                    } else {
+                        infeccionBacteriana = "No";
+                    }
+                    Reptil r = new Reptil("Reptil", nombreA, especieA, pesoA, gravedadA, "Tratamiento", fechaEA, infeccionBacteriana);
+                    animales.add(r);
+                    nombreAlta.setText("");
+                    especieAlta.setText("");
+                    pesoAlta.setText("");
+                    gravedadAlta.setText("");
+                    fechaEAlta.setText("dd/mm/aaaa");
                 }
-                Reptil r = new Reptil("Reptil", nombreA, especieA, pesoA, gravedadA, "Tratamiento", fechaEA, infeccionBacteriana);
-                animales.add(r);
-                nombreAlta.setText("");
-                especieAlta.setText("");
-                pesoAlta.setText("");
-                gravedadAlta.setText("");
-                fechaEAlta.setText("dd/mm/aaaa");
             }
-        }
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(nombreAlta, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");  
-        }
-        catch (ParseException e) {
-            JOptionPane.showMessageDialog(nombreAlta, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy");  
+            JOptionPane.showMessageDialog(nombreAlta, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
+        } catch (ParseException e) {
+            JOptionPane.showMessageDialog(nombreAlta, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy");
         }
     }//GEN-LAST:event_botonGAltaActionPerformed
 
@@ -951,6 +991,13 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_gravedadAltaActionPerformed
 
+    /**
+     * Realiza acciones al ocurrir un evento en el botón de volver en la ventana
+     * de listado. Borra el contenido del área de texto y cierra la ventana de
+     * listado
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
         listaListado.setText("");
         ventanaListado.dispose();
@@ -963,16 +1010,16 @@ public class CentroRecuperacion extends javax.swing.JFrame {
      * @param evt 
      */
     private void botonGTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGTratamientoActionPerformed
-        try{
-        animales.get(combitoT.getSelectedIndex()).setTratamiento(textoTratamiento.getText());
-        animales.get(combitoT.getSelectedIndex()).setEstado("Tratamiento");
-        animales.get(combitoT.getSelectedIndex()).setFechaLiberacion(null);
-        animales.get(combitoT.getSelectedIndex()).setFechaMuerte(null);
-        combitoT.removeAllItems();   
+        try {
+            animales.get(combitoT.getSelectedIndex()).setTratamiento(textoTratamiento.getText());
+            animales.get(combitoT.getSelectedIndex()).setEstado("Tratamiento");
+            animales.get(combitoT.getSelectedIndex()).setFechaLiberacion(null);
+            animales.get(combitoT.getSelectedIndex()).setFechaMuerte(null);
+            combitoT.removeAllItems();
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(textoTratamiento, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");  
-        } catch(IndexOutOfBoundsException exc){
-            JOptionPane.showMessageDialog(nombreAlta, "No hay especies dadas de alta");              
+            JOptionPane.showMessageDialog(textoTratamiento, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
+        } catch (IndexOutOfBoundsException exc) {
+            JOptionPane.showMessageDialog(nombreAlta, "No hay especies dadas de alta");
         }
         ventanaTratamiento.dispose();
     }//GEN-LAST:event_botonGTratamientoActionPerformed
@@ -996,14 +1043,20 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             combitoLib.removeAll();
             ventanaLiberacion.dispose();
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(fechaLiberacion, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");  
+            JOptionPane.showMessageDialog(fechaLiberacion, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
         } catch (ParseException ex) {
-            JOptionPane.showMessageDialog(fechaLiberacion, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy"); 
-        }  catch(IndexOutOfBoundsException exc){
-            JOptionPane.showMessageDialog(nombreAlta, "No hay especies dadas de alta");              
-        }       
+            JOptionPane.showMessageDialog(fechaLiberacion, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy");
+        } catch (IndexOutOfBoundsException exc) {
+            JOptionPane.showMessageDialog(nombreAlta, "No hay especies dadas de alta");
+        }
     }//GEN-LAST:event_botonGLiberacionActionPerformed
 
+    /**
+     * Guarda la información de la fecha de baja, para posteriormente mostrarla en el listado.
+     * También cambia el estado del animal a "fallecido".
+     * Controla mediante excepciones los espacios en blanco o formatos mal introducidos.
+     * @param evt El evento que desencadena la acción.
+     */
     private void botonGBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGBajaActionPerformed
         try {
             String fechaMstr = jTextField18.getText();
@@ -1016,16 +1069,23 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             animales.get(combitoB.getSelectedIndex()).setFechaLiberacion(null);
             combitoB.removeAllItems();
             ventanaBaja.dispose();
-            
+
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(fechaLiberacion, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");  
+            JOptionPane.showMessageDialog(fechaLiberacion, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
         } catch (ParseException ex) {
-            JOptionPane.showMessageDialog(fechaLiberacion, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy"); 
-        }  catch(IndexOutOfBoundsException exc){
-            JOptionPane.showMessageDialog(nombreAlta, "No hay especies dadas de alta");              
+            JOptionPane.showMessageDialog(fechaLiberacion, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy");
+        } catch (IndexOutOfBoundsException exc) {
+            JOptionPane.showMessageDialog(nombreAlta, "No hay especies dadas de alta");
         }
     }//GEN-LAST:event_botonGBajaActionPerformed
     
+    /**
+     * Realiza acciones al ocurrir un evento en el botón de volver en la ventana
+     * de alta. Borra el contenido del área de texto y cierra la ventana de
+     * alta.
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void volverAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAltaActionPerformed
         ventanaAlta.dispose();
     }//GEN-LAST:event_volverAltaActionPerformed
