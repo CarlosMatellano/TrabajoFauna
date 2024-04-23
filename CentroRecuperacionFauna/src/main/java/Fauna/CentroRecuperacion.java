@@ -4,16 +4,43 @@
  */
 package Fauna;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
+ * Clase que representa el centro de recuperación animal
  *
- * @author Alumno
+ * Esta clase es un marco principal para una app utilizando swing.
+ *
+ * @author Hugo Mazarío Ros y Carlos Matellano Villacampa 1ºDAM
+ * @atribute animales ArrayList que almacena los animales en el centro de
+ * recuperación.
+ * @atribute icono Icono utilizado para la interfaz gráfica del centro de
+ * recuperación.
+ * @atribute formato Formato de fecha utilizado en el programa
+ *
  */
 public class CentroRecuperacion extends javax.swing.JFrame {
 
+    static ArrayList<Animal> animales = new ArrayList();
+
+    static ImageIcon icono = new ImageIcon("src/images/ZOO_favicon.png");
+
+    static SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+
     /**
-     * Creates new form CentroRecuperacion
+     *
+     * Inicializa la interfaz gráfica y establece el icono de la ventana.
      */
     public CentroRecuperacion() {
+        setIconImage(icono.getImage());
         initComponents();
     }
 
@@ -29,45 +56,55 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaAlta = new javax.swing.JFrame();
         jPanel2 = new javax.swing.JPanel();
         jTextField9 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        botonGAlta = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        nombreAlta = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        fechaEAlta = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        especieAlta = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        pesoAlta = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        tipoAlta = new javax.swing.JComboBox<>();
+        gravedadAlta = new javax.swing.JTextField();
+        volverAlta = new javax.swing.JButton();
         ventanaTratamiento = new javax.swing.JFrame();
         jPanel3 = new javax.swing.JPanel();
         jTextField10 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        textoTratamiento = new javax.swing.JTextField();
+        botonGTratamiento = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        combitoT = new javax.swing.JComboBox<>();
         ventanaLiberacion = new javax.swing.JFrame();
         jPanel4 = new javax.swing.JPanel();
         jTextField11 = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jButton2 = new javax.swing.JButton();
-        jTextField15 = new javax.swing.JTextField();
+        botonGLiberacion = new javax.swing.JButton();
+        fechaLiberacion = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        combitoLib = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
+        veterinarioL = new javax.swing.JComboBox<>();
         ventanaListado = new javax.swing.JFrame();
         jPanel5 = new javax.swing.JPanel();
         jTextField12 = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
-        Volver = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        listaListado = new javax.swing.JTextArea();
+        botonVolver = new javax.swing.JButton();
         ventanaBaja = new javax.swing.JFrame();
         jPanel6 = new javax.swing.JPanel();
         jTextField13 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        botonGBaja = new javax.swing.JButton();
         jTextField17 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jTextField18 = new javax.swing.JTextField();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jList4 = new javax.swing.JList<>();
+        jLabel12 = new javax.swing.JLabel();
+        combitoB = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        veterinarioB = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         alta = new javax.swing.JButton();
         Liberacion = new javax.swing.JButton();
@@ -78,13 +115,13 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
 
-        ventanaAlta.setMinimumSize(new java.awt.Dimension(480, 370));
+        ventanaAlta.setBounds(new java.awt.Rectangle(700, 350, 445, 445));
         ventanaAlta.setResizable(false);
 
-        jPanel2.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel2.setBackground(new java.awt.Color(221, 227, 225));
 
         jTextField9.setEditable(false);
-        jTextField9.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField9.setBackground(new java.awt.Color(40, 163, 222));
         jTextField9.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField9.setForeground(new java.awt.Color(255, 255, 255));
         jTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -95,7 +132,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Guardar");
+        botonGAlta.setText("Guardar");
+        botonGAlta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonGAltaActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel1.setText("Tipo de Animal:");
@@ -103,53 +145,61 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel2.setText("Nombre:");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        nombreAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                nombreAltaActionPerformed(evt);
             }
         });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel4.setText("Fecha Entrada:");
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        fechaEAlta.setText("dd/mm/aaaa");
+        fechaEAlta.setToolTipText("");
+        fechaEAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                fechaEAltaActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel5.setText("Especie:");
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        especieAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                especieAltaActionPerformed(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel6.setText("Peso:");
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        pesoAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
-            }
-        });
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AVE", "MAMÍFERO", "REPTIL" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                pesoAltaActionPerformed(evt);
             }
         });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel7.setText("Gravedad:");
+        jLabel7.setText("Gravedad Lesión:");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Leve", "Media", "Grave" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        tipoAlta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AVE", "MAMÍFERO", "REPTIL" }));
+        tipoAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                tipoAltaActionPerformed(evt);
+            }
+        });
+
+        gravedadAlta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gravedadAltaActionPerformed(evt);
+            }
+        });
+
+        volverAlta.setText("Volver");
+        volverAlta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverAltaActionPerformed(evt);
             }
         });
 
@@ -158,32 +208,33 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTextField9)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(volverAlta)
+                .addGap(18, 18, 18)
+                .addComponent(botonGAlta)
+                .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
-                            .addComponent(jTextField5)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField7)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(9, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(especieAlta)
+                    .addComponent(fechaEAlta)
+                    .addComponent(pesoAlta)
+                    .addComponent(nombreAlta)
+                    .addComponent(tipoAlta, 0, 215, Short.MAX_VALUE)
+                    .addComponent(gravedadAlta))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,25 +249,27 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(fechaEAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(especieAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(pesoAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(gravedadAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tipoAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(nombreAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                    .addComponent(botonGAlta)
+                    .addComponent(volverAlta))
                 .addContainerGap())
         );
 
@@ -228,15 +281,16 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         );
         ventanaAltaLayout.setVerticalGroup(
             ventanaAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        ventanaTratamiento.setBounds(new java.awt.Rectangle(350, 350, 1200, 375));
         ventanaTratamiento.setResizable(false);
 
-        jPanel3.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel3.setBackground(new java.awt.Color(221, 227, 225));
 
         jTextField10.setEditable(false);
-        jTextField10.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField10.setBackground(new java.awt.Color(40, 163, 222));
         jTextField10.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField10.setForeground(new java.awt.Color(255, 255, 255));
         jTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -247,17 +301,55 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("Tratamiento:");
+
+        botonGTratamiento.setText("Guardar");
+        botonGTratamiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonGTratamientoActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setText("Animal:");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+            .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(botonGTratamiento))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(47, 47, 47)
+                        .addComponent(combitoT, 0, 672, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(12, 12, 12)
+                        .addComponent(textoTratamiento)))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 253, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(combitoT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(textoTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
+                .addComponent(botonGTratamiento)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout ventanaTratamientoLayout = new javax.swing.GroupLayout(ventanaTratamiento.getContentPane());
@@ -268,17 +360,16 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         );
         ventanaTratamientoLayout.setVerticalGroup(
             ventanaTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ventanaTratamientoLayout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        ventanaLiberacion.setBounds(new java.awt.Rectangle(350, 350, 1200, 315));
         ventanaLiberacion.setResizable(false);
 
-        jPanel4.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel4.setBackground(new java.awt.Color(221, 227, 225));
 
         jTextField11.setEditable(false);
-        jTextField11.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField11.setBackground(new java.awt.Color(40, 163, 222));
         jTextField11.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField11.setForeground(new java.awt.Color(255, 255, 255));
         jTextField11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -289,40 +380,62 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
-
-        jButton2.setText("Guardar");
-
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
+        botonGLiberacion.setText("Guardar");
+        botonGLiberacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
+                botonGLiberacionActionPerformed(evt);
+            }
+        });
+
+        fechaLiberacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fechaLiberacionActionPerformed(evt);
             }
         });
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel9.setText("Fecha Liberación:");
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel10.setText("Animal:");
+
+        combitoLib.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combitoLibActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel13.setText("Veterianario:");
+
+        veterinarioL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Carlos Matellano", "Hugo Mazarío", "Carmen Vidal" }));
+        veterinarioL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                veterinarioLActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+            .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton2))
-                    .addComponent(jScrollPane1)
+                        .addComponent(botonGLiberacion))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(46, 46, 46)
-                        .addComponent(jTextField15)))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel13))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fechaLiberacion)
+                            .addComponent(combitoLib, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(veterinarioL, 0, 1039, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -330,14 +443,20 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(combitoLib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(veterinarioL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addContainerGap())
+                    .addComponent(fechaLiberacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(botonGLiberacion)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ventanaLiberacionLayout = new javax.swing.GroupLayout(ventanaLiberacion.getContentPane());
@@ -348,15 +467,16 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         );
         ventanaLiberacionLayout.setVerticalGroup(
             ventanaLiberacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        ventanaListado.setBounds(new java.awt.Rectangle(350, 350, 1100, 375));
         ventanaListado.setResizable(false);
 
-        jPanel5.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel5.setBackground(new java.awt.Color(221, 227, 225));
 
         jTextField12.setEditable(false);
-        jTextField12.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField12.setBackground(new java.awt.Color(40, 163, 222));
         jTextField12.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField12.setForeground(new java.awt.Color(255, 255, 255));
         jTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -367,17 +487,15 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(jList2);
+        listaListado.setEditable(false);
+        listaListado.setColumns(20);
+        listaListado.setRows(5);
+        jScrollPane3.setViewportView(listaListado);
 
-        Volver.setText("Volver");
-        Volver.addActionListener(new java.awt.event.ActionListener() {
+        botonVolver.setText("Volver");
+        botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverActionPerformed(evt);
+                botonVolverActionPerformed(evt);
             }
         });
 
@@ -388,20 +506,22 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Volver)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(botonVolver))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Volver)
-                .addGap(0, 14, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonVolver)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ventanaListadoLayout = new javax.swing.GroupLayout(ventanaListado.getContentPane());
@@ -415,12 +535,13 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        ventanaBaja.setBounds(new java.awt.Rectangle(350, 350, 1200, 315));
         ventanaBaja.setResizable(false);
 
-        jPanel6.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel6.setBackground(new java.awt.Color(221, 227, 225));
 
         jTextField13.setEditable(false);
-        jTextField13.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField13.setBackground(new java.awt.Color(40, 163, 222));
         jTextField13.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField13.setForeground(new java.awt.Color(255, 255, 255));
         jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -431,14 +552,19 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Guardar");
+        botonGBaja.setText("Guardar");
+        botonGBaja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonGBajaActionPerformed(evt);
+            }
+        });
 
         jTextField17.setEditable(false);
         jTextField17.setBackground(new java.awt.Color(0, 153, 204));
         jTextField17.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField17.setForeground(new java.awt.Color(255, 255, 255));
         jTextField17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField17.setText("LIBERACIÓN");
+        jTextField17.setText("BAJA");
         jTextField17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField17ActionPerformed(evt);
@@ -454,55 +580,66 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
-        jList4.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane4.setViewportView(jList4);
+        jLabel12.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel12.setText("Animal:");
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel14.setText("Veterinario:");
+
+        veterinarioB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Carlos Matellano", "Hugo Mazarío", "Carmen Vidal" }));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTextField13)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel14))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField18)
+                            .addComponent(veterinarioB, 0, 1070, Short.MAX_VALUE)
+                            .addComponent(combitoB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel11)
-                        .addGap(91, 91, 91)
-                        .addComponent(jTextField18, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton3)))
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonGBaja)))
+                .addGap(20, 20, 20))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(2, 2, 2)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
+                    .addComponent(jTextField17, javax.swing.GroupLayout.DEFAULT_SIZE, 1193, Short.MAX_VALUE)
                     .addGap(2, 2, 2)))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addContainerGap())
+                    .addComponent(jLabel12)
+                    .addComponent(combitoB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(veterinarioB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addComponent(botonGBaja)
+                .addGap(30, 30, 30))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(2, 2, 2)
                     .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(317, Short.MAX_VALUE)))
+                    .addContainerGap(253, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout ventanaBajaLayout = new javax.swing.GroupLayout(ventanaBaja.getContentPane());
@@ -518,9 +655,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setBounds(new java.awt.Rectangle(700, 350, 401, 371));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel1.setBackground(new java.awt.Color(221, 227, 225));
 
         alta.setText("ALTA");
         alta.addActionListener(new java.awt.event.ActionListener() {
@@ -565,13 +703,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         });
 
         jTextField2.setEditable(false);
-        jTextField2.setBackground(new java.awt.Color(0, 153, 51));
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField2.setBackground(new java.awt.Color(40, 222, 161));
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField2.setText("SELECCIONE LA OPCIÓN A REALIZAR");
 
         jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField1.setBackground(new java.awt.Color(40, 163, 222));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -643,33 +780,88 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+     * Realiza acciones al ocurrir un evento en el botón de tratamiento.
+     * Actualiza la ventana de tratamiento, añade elementos al combobox y la
+     * muestra.
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void tratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tratamientoActionPerformed
+        ventanaTratamiento.setIconImage(icono.getImage());
+        for (int i = 0; i < animales.size(); i++) {
+            String cadena = animales.get(i).toString();
+            combitoT.addItem(cadena);
+        }
         ventanaTratamiento.setVisible(true);
     }//GEN-LAST:event_tratamientoActionPerformed
-
+    /**
+     * Realiza acciones al ocurrir un evento en el botón de listado. Actualiza
+     * la ventana de listado, añade elementos al área de texto y la muestra.
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void listadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoActionPerformed
+        ventanaListado.setIconImage(icono.getImage());
+        for (int i = 0; i < animales.size(); i++) {
+            String cadena = animales.get(i).toString();
+            listaListado.append(cadena + "\n");
+        }
+
         ventanaListado.setVisible(true);
         ventanaListado.setSize(445, 445);
 
     }//GEN-LAST:event_listadoActionPerformed
-
+    /**
+     * Realiza acciones al ocurrir un evento en el botón de alta. Actualiza la
+     * ventana de alta y la muestra.
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
+        ventanaAlta.setIconImage(icono.getImage());
         ventanaAlta.setVisible(true);
         ventanaAlta.setSize(445, 445);
 
     }//GEN-LAST:event_altaActionPerformed
-
+    /**
+     * Realiza acciones al ocurrir un evento en el botón de liberación.
+     * Actualiza la ventana de liberación, añade elementos al combobox y la
+     * muestra.
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void LiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LiberacionActionPerformed
-        ventanaLiberacion.setSize(373, 398);
+        ventanaLiberacion.setIconImage(icono.getImage());
+        for (int i = 0; i < animales.size(); i++) {
+            String cadena = animales.get(i).toString();
+            combitoLib.addItem(cadena);
+        }
+        combitoLib.getSelectedItem();
+
         ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
-
+    /**
+     * Realiza acciones al ocurrir un evento en el botón de baja. Actualiza la
+     * ventana de baja, añade elementos al combobox y la muestra.
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void BajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaActionPerformed
-        ventanaBaja.setSize(373, 398);
+        ventanaBaja.setIconImage(icono.getImage());
+
+        for (int i = 0; i < animales.size(); i++) {
+            String cadena = animales.get(i).toString();
+            combitoB.addItem(cadena);
+        }
         ventanaBaja.setVisible(true);
     }//GEN-LAST:event_BajaActionPerformed
-
+    /**
+     * Realiza acciones al ocurrir un evento en el botón de salida. Termina la
+     * ejecución del programa al cerrar la aplicación.
+     *
+     * @param evt El evento que desencadena la acción.
+     */
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_salirActionPerformed
@@ -698,29 +890,110 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField13ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void nombreAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreAltaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_nombreAltaActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void fechaEAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fechaEAltaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_fechaEAltaActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void especieAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_especieAltaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_especieAltaActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void pesoAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesoAltaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_pesoAltaActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void fechaLiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fechaLiberacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_fechaLiberacionActionPerformed
+
+    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField17ActionPerformed
+
+    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField18ActionPerformed
+/**
+ * Guarda toda la información para dar de alta un animal en el ArrayList de animales, controla mediante excepciones si hay espacios en blanco o el formato 
+ * está mala.
+ * 
+ * @param evt El evento que desencadena la acción.
+ */
+    private void botonGAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGAltaActionPerformed
+        try {
+            String nombreA = nombreAlta.getText();
+            String especieA = especieAlta.getText();
+            Double pesoA = Double.parseDouble(pesoAlta.getText());
+            String gravedadA = gravedadAlta.getText();
+            Date fechaEA = null;
+            String fechastr = fechaEAlta.getText();
+            fechaEA = formato.parse(fechastr);
+            if (tipoAlta.getSelectedItem().equals("AVE")) {
+                String lesioncaza = "";
+                int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por caza furtiva?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
+                if (opcion == JOptionPane.YES_OPTION) {
+                    lesioncaza = "Si";
+                } else {
+                    lesioncaza = "No";
+                }
+                Ave a = new Ave("Ave", nombreA, especieA, pesoA, gravedadA, "Tratamiento", fechaEA, lesioncaza);
+                animales.add(a);
+                nombreAlta.setText("");
+                especieAlta.setText("");
+                pesoAlta.setText("");
+                gravedadAlta.setText("");
+                fechaEAlta.setText("dd/mm/aaaa");
+            } else {
+                if (tipoAlta.getSelectedItem().equals("MAMÍFERO")) {
+                    String lesionAtropello = "";
+                    int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por atropello?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
+                    if (opcion == JOptionPane.YES_OPTION) {
+                        lesionAtropello = "Si";
+                    } else {
+                        lesionAtropello = "No";
+                    }
+                    Mamifero m = new Mamifero("Mamífero", nombreA, especieA, pesoA, gravedadA, "Tratamiento", fechaEA, lesionAtropello);
+                    animales.add(m);
+                    nombreAlta.setText("");
+                    especieAlta.setText("");
+                    pesoAlta.setText("");
+                    gravedadAlta.setText("");
+                    fechaEAlta.setText("dd/mm/aaaa");
+                } else {
+                    String infeccionBacteriana = "";
+                    int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por infección bacteriana?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
+                    if (opcion == JOptionPane.YES_OPTION) {
+                        infeccionBacteriana = "Si";
+                    } else {
+                        infeccionBacteriana = "No";
+                    }
+                    Reptil r = new Reptil("Reptil", nombreA, especieA, pesoA, gravedadA, "Tratamiento", fechaEA, infeccionBacteriana);
+                    animales.add(r);
+                    nombreAlta.setText("");
+                    especieAlta.setText("");
+                    pesoAlta.setText("");
+                    gravedadAlta.setText("");
+                    fechaEAlta.setText("dd/mm/aaaa");
+                }
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(nombreAlta, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
+        } catch (ParseException e) {
+            JOptionPane.showMessageDialog(nombreAlta, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy");
+        }
+    }//GEN-LAST:event_botonGAltaActionPerformed
+
+    private void tipoAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAltaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipoAltaActionPerformed
+
+    private void gravedadAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gravedadAltaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gravedadAltaActionPerformed
 
     private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
         // TODO add your handling code here:
@@ -739,6 +1012,114 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_VolverActionPerformed
 
     /**
+     * Realiza acciones al ocurrir un evento en el botón de volver en la ventana
+     * de listado. Borra el contenido del área de texto y cierra la ventana de
+     * listado
+     *
+     * @param evt El evento que desencadena la acción.
+     */
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        listaListado.setText("");
+        ventanaListado.dispose();
+    }//GEN-LAST:event_botonVolverActionPerformed
+
+    /**
+     * Guarda la información del tratamiento proporcionado en el animal indicado.
+     * Controla mediante excepciones si hay algún espacio en blanco o si no se pueden aplicar tratamientos ya que no hya animales dados de alta.
+     * 
+     * @param evt 
+     */
+    private void botonGTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGTratamientoActionPerformed
+        try {
+            animales.get(combitoT.getSelectedIndex()).setTratamiento(textoTratamiento.getText());
+            animales.get(combitoT.getSelectedIndex()).setEstado("Tratamiento");
+            animales.get(combitoT.getSelectedIndex()).setFechaLiberacion(null);
+            animales.get(combitoT.getSelectedIndex()).setFechaMuerte(null);
+            combitoT.removeAllItems();
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(textoTratamiento, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
+        } catch (IndexOutOfBoundsException exc) {
+            JOptionPane.showMessageDialog(nombreAlta, "No hay especies dadas de alta");
+        }
+        ventanaTratamiento.dispose();
+    }//GEN-LAST:event_botonGTratamientoActionPerformed
+/**
+ * Guarda la información de la fecha de liberación, para posteriormente mostrarla en el listado.
+ * Cambia e estado del animal a liberado,
+ * Controla mediante excepciones los espacios en blanco o formatos mal introducidos.
+ * 
+ * @param evt 
+ */
+    private void botonGLiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGLiberacionActionPerformed
+        try {
+            String fechaLstr = fechaLiberacion.getText();
+            Date fechaL = formato.parse(fechaLstr);
+            animales.get(combitoLib.getSelectedIndex()).setFechaLiberacion(fechaL);
+            animales.get(combitoLib.getSelectedIndex()).setEstado("Liberado");
+            String veterinario = (String) veterinarioL.getSelectedItem();
+            animales.get(combitoLib.getSelectedIndex()).setVeterinario(veterinario);
+            animales.get(combitoLib.getSelectedIndex()).setTratamiento(null);
+            animales.get(combitoLib.getSelectedIndex()).setFechaMuerte(null);
+            combitoLib.removeAll();
+            ventanaLiberacion.dispose();
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(fechaLiberacion, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(fechaLiberacion, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy");
+        } catch (IndexOutOfBoundsException exc) {
+            JOptionPane.showMessageDialog(nombreAlta, "No hay especies dadas de alta");
+        }
+    }//GEN-LAST:event_botonGLiberacionActionPerformed
+
+    /**
+     * Guarda la información de la fecha de baja, para posteriormente mostrarla en el listado.
+     * También cambia el estado del animal a "fallecido".
+     * Controla mediante excepciones los espacios en blanco o formatos mal introducidos.
+     * @param evt El evento que desencadena la acción.
+     */
+    private void botonGBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGBajaActionPerformed
+        try {
+            String fechaMstr = jTextField18.getText();
+            Date fechaM = formato.parse(fechaMstr);
+            animales.get(combitoB.getSelectedIndex()).setFechaMuerte(fechaM);
+            animales.get(combitoB.getSelectedIndex()).setEstado("Fallecido");
+            String veterinario = (String) veterinarioB.getSelectedItem();
+            animales.get(combitoB.getSelectedIndex()).setVeterinario(veterinario);
+            animales.get(combitoB.getSelectedIndex()).setTratamiento(null);
+            animales.get(combitoB.getSelectedIndex()).setFechaLiberacion(null);
+            combitoB.removeAllItems();
+            ventanaBaja.dispose();
+
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(fechaLiberacion, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(fechaLiberacion, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy");
+        } catch (IndexOutOfBoundsException exc) {
+            JOptionPane.showMessageDialog(nombreAlta, "No hay especies dadas de alta");
+        }
+    }//GEN-LAST:event_botonGBajaActionPerformed
+    
+    /**
+     * Realiza acciones al ocurrir un evento en el botón de volver en la ventana
+     * de alta. Borra el contenido del área de texto y cierra la ventana de
+     * alta.
+     * @param evt El evento que desencadena la acción.
+     */
+    private void volverAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAltaActionPerformed
+        ventanaAlta.dispose();
+    }//GEN-LAST:event_volverAltaActionPerformed
+
+    private void combitoLibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combitoLibActionPerformed
+
+    }//GEN-LAST:event_combitoLibActionPerformed
+
+    private void veterinarioLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veterinarioLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_veterinarioLActionPerformed
+
+    /**
+     * Programa principal que lanza la ventana del Centro de Recuperación.
+     * 
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -765,10 +1146,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CentroRecuperacion().setVisible(true);
+
             }
         });
     }
@@ -778,52 +1161,62 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JButton Liberacion;
     private javax.swing.JButton Volver;
     private javax.swing.JButton alta;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton botonGAlta;
+    private javax.swing.JButton botonGBaja;
+    private javax.swing.JButton botonGLiberacion;
+    private javax.swing.JButton botonGTratamiento;
+    private javax.swing.JButton botonVolver;
+    private javax.swing.JComboBox<String> combitoB;
+    private javax.swing.JComboBox<String> combitoLib;
+    private javax.swing.JComboBox<String> combitoT;
+    private javax.swing.JTextField especieAlta;
+    private javax.swing.JTextField fechaEAlta;
+    private javax.swing.JTextField fechaLiberacion;
+    private javax.swing.JTextField gravedadAlta;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextArea listaListado;
     private javax.swing.JButton listado;
+    private javax.swing.JTextField nombreAlta;
+    private javax.swing.JTextField pesoAlta;
     private javax.swing.JButton salir;
+    private javax.swing.JTextField textoTratamiento;
+    private javax.swing.JComboBox<String> tipoAlta;
     private javax.swing.JButton tratamiento;
     private javax.swing.JFrame ventanaAlta;
     private javax.swing.JFrame ventanaBaja;
     private javax.swing.JFrame ventanaLiberacion;
     private javax.swing.JFrame ventanaListado;
     private javax.swing.JFrame ventanaTratamiento;
+    private javax.swing.JComboBox<String> veterinarioB;
+    private javax.swing.JComboBox<String> veterinarioL;
+    private javax.swing.JButton volverAlta;
     // End of variables declaration//GEN-END:variables
 }
