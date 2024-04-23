@@ -120,7 +120,7 @@ public class Animal {
     
     /**
      * 
-     * Aquí todos los geter y seter para interactuar con los objetos
+     * Aquí todos los geters y seters para interactuar con los objetos
      */
     public String getTratamiento() {
         return tratamiento;
