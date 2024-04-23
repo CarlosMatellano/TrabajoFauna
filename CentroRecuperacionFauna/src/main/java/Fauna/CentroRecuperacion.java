@@ -1083,7 +1083,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
      * Realiza acciones al ocurrir un evento en el botón de volver en la ventana
      * de alta. Borra el contenido del área de texto y cierra la ventana de
      * alta.
-     *
      * @param evt El evento que desencadena la acción.
      */
     private void volverAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAltaActionPerformed
