@@ -913,7 +913,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField18ActionPerformed
-
+/**
+ * Guarda toda la información para dar de alta un animal en el ArrayList de animales, controla mediante excepciones si hay espacios en blanco o el formato 
+ * está mala.
+ * 
+ * @param evt El evento que desencadena la acción.
+ */
     private void botonGAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGAltaActionPerformed
         try {
             String nombreA = nombreAlta.getText();
@@ -998,6 +1003,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaListado.dispose();
     }//GEN-LAST:event_botonVolverActionPerformed
 
+    /**
+     * Guarda la información del tratamiento proporcionado en el animal indicado.
+     * Controla mediante excepciones si hay algún espacio en blanco o si no se pueden aplicar tratamientos ya que no hya animales dados de alta.
+     * 
+     * @param evt 
+     */
     private void botonGTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGTratamientoActionPerformed
         try {
             animales.get(combitoT.getSelectedIndex()).setTratamiento(textoTratamiento.getText());
@@ -1012,7 +1023,13 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         }
         ventanaTratamiento.dispose();
     }//GEN-LAST:event_botonGTratamientoActionPerformed
-
+/**
+ * Guarda la información de la fecha de liberación, para posteriormente mostrarla en el listado.
+ * Cambia e estado del animal a liberado,
+ * Controla mediante excepciones los espacios en blanco o formatos mal introducidos.
+ * 
+ * @param evt 
+ */
     private void botonGLiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGLiberacionActionPerformed
         try {
             String fechaLstr = fechaLiberacion.getText();
@@ -1071,7 +1088,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
      */
     private void volverAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAltaActionPerformed
         ventanaAlta.dispose();
-
     }//GEN-LAST:event_volverAltaActionPerformed
 
     private void combitoLibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combitoLibActionPerformed
