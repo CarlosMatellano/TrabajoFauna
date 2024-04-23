@@ -25,7 +25,6 @@ public class Animal {
     protected Date fechaMuerte;
     protected String veterinario;
     
-    
     //Constructor Principal
     public Animal(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada) {
         this.tipoAnimal = tipoAnimal;
@@ -50,7 +49,7 @@ public class Animal {
     }
 
     //Constructor Liberaión
-    public Animal(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, Date fechaLiberacion) {
+    public Animal(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, Date fechaLiberacion, String veterinario) {
         this.tipoAnimal = tipoAnimal;
         this.nombre = nombre;
         this.especie = especie;
@@ -59,9 +58,10 @@ public class Animal {
         this.estado = estado;
         this.fechaentrada = fechaentrada;
         this.fechaLiberacion = fechaLiberacion;
+        this.veterinario = veterinario;
     }
 
-    public Animal(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, Date fechaMuerte) {
+    public Animal(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, Date fechaMuerte, String veterinario) {
         this.tipoAnimal = tipoAnimal;
         this.nombre = nombre;
         this.especie = especie;
@@ -69,6 +69,7 @@ public class Animal {
         this.estado = estado;
         this.fechaentrada = fechaentrada;
         this.fechaMuerte = fechaMuerte;
+        this.veterinario = veterinario;
     }
     
     public String getTratamiento() {
@@ -150,4 +151,11 @@ public class Animal {
     public void setEstado(String estado) {
         this.estado = estado;
     }  
+    public String getVeterinario() {
+        return veterinario;
+    }
+
+    public void setVeterinario(String veterinario) {
+        this.veterinario = veterinario;
+    }    
 }

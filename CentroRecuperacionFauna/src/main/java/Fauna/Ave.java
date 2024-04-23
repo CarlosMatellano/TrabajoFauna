@@ -13,7 +13,7 @@ import java.util.Date;
 public class Ave extends Animal {
 
     private String lesioncaza;
-    protected String veterinario;
+    
 
     public Ave(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String lesioncaza) {
         super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada);
@@ -24,12 +24,12 @@ public class Ave extends Animal {
         super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada, tratamiento);
         this.lesioncaza = lesioncaza;
     }
-    public Ave(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento, String veterinario, Date fechaLiberacion, String lesioncaza) {
-        super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada, fechaLiberacion);
+    public Ave(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaLiberacion, String veterinario, String lesioncaza) {
+        super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada, fechaLiberacion, veterinario);
         this.lesioncaza = lesioncaza;
     }
-    public Ave(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, String tratamiento,String veterinario, Date fechaMuerte, String lesioncaza) {
-        super(tipoAnimal, nombre, especie, gravedad, estado, fechaentrada, fechaMuerte);
+    public Ave(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaMuerte, String veterinario, String lesioncaza) {
+        super(tipoAnimal, nombre, especie, gravedad, estado, fechaentrada, fechaMuerte, veterinario);
         this.lesioncaza = lesioncaza;
     }
 
@@ -39,14 +39,6 @@ public class Ave extends Animal {
 
     public void setLesioncaza(String lesioncaza) {
         this.lesioncaza = lesioncaza;
-    }
-
-    public String getVeterinario() {
-        return veterinario;
-    }
-
-    public void setVeterinario(String veterinario) {
-        this.veterinario = veterinario;
     }
     
     @Override
