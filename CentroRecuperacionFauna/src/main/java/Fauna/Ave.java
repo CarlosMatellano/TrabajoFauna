@@ -13,6 +13,7 @@ import java.util.Date;
 public class Ave extends Animal {
 
     private String lesioncaza;
+    protected String veterinario;
 
     public Ave(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String lesioncaza) {
         super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada);
@@ -23,11 +24,11 @@ public class Ave extends Animal {
         super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada, tratamiento);
         this.lesioncaza = lesioncaza;
     }
-    public Ave(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaLiberacion, String lesioncaza) {
+    public Ave(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento, String veterinario, Date fechaLiberacion, String lesioncaza) {
         super(tipoAnimal, nombre, especie, peso, gravedad, estado, fechaentrada, fechaLiberacion);
         this.lesioncaza = lesioncaza;
     }
-    public Ave(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, String tratamiento, Date fechaMuerte, String lesioncaza) {
+    public Ave(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, String tratamiento,String veterinario, Date fechaMuerte, String lesioncaza) {
         super(tipoAnimal, nombre, especie, gravedad, estado, fechaentrada, fechaMuerte);
         this.lesioncaza = lesioncaza;
     }
@@ -40,6 +41,14 @@ public class Ave extends Animal {
         this.lesioncaza = lesioncaza;
     }
 
+    public String getVeterinario() {
+        return veterinario;
+    }
+
+    public void setVeterinario(String veterinario) {
+        this.veterinario = veterinario;
+    }
+    
     @Override
     public String toString() {
         String texto;
@@ -47,10 +56,10 @@ public class Ave extends Animal {
             texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Lesión caza: " + lesioncaza + " | Estado: " + estado + " | Tratamiento: " + tratamiento;
         } else {
             if (fechaLiberacion != null) {
-                texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Lesión caza: " + lesioncaza + " | Estado: " + estado + " | Fecha Liberación: " + fechaLiberacion;
+                texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " |  Fecha Entrada: " + fechaentrada + " | Lesión caza: " + lesioncaza +" | Estado: " + estado + " | Fecha Liberación: " + fechaLiberacion+" | Veterianario: "+veterinario;
             } else {
                 if (fechaMuerte != null) {
-                    texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Lesión caza: " + lesioncaza + " | Estado: " + estado + " | Fecha Fallecimiento: " + fechaMuerte;
+                    texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Lesión caza: " + lesioncaza + " | Estado: " + estado + " | Fecha Fallecimiento: " + fechaMuerte+" | Veterianario: "+veterinario;
 
                 } else {
                     texto = "TP: " + tipoAnimal + " | Nombre: " + nombre + " | Especie: " + especie + " | Peso: " + peso + " | Gravedad: " + gravedad + " | Fecha Entrada: " + fechaentrada + " | Lesión caza: " + lesioncaza + " | Estado: " + estado;

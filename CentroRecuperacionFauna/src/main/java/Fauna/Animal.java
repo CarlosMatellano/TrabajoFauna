@@ -23,6 +23,7 @@ public class Animal {
     protected String tratamiento;
     protected Date fechaLiberacion;
     protected Date fechaMuerte;
+    protected String veterinario;
     
     
     //Constructor Principal

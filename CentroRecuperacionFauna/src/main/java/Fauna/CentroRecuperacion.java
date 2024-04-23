@@ -73,6 +73,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         combitoLib = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
+        veterinarioL = new javax.swing.JComboBox<>();
         ventanaListado = new javax.swing.JFrame();
         jPanel5 = new javax.swing.JPanel();
         jTextField12 = new javax.swing.JTextField();
@@ -379,6 +381,16 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel13.setText("Veterianario:");
+
+        veterinarioL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Carlos Matellano", "Hugo Mazario" }));
+        veterinarioL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                veterinarioLActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -393,11 +405,13 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
-                            .addComponent(jLabel9))
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel13))
                         .addGap(24, 24, 24)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(fechaLiberacion)
-                            .addComponent(combitoLib, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(combitoLib, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(veterinarioL, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -408,13 +422,17 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(combitoLib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(68, 68, 68)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(veterinarioL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(fechaLiberacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addComponent(botonGLiberacion)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ventanaLiberacionLayout = new javax.swing.GroupLayout(ventanaLiberacion.getContentPane());
@@ -914,6 +932,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         combitoT.removeAllItems();   
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(textoTratamiento, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");  
+        } catch(IndexOutOfBoundsException exc){
+            JOptionPane.showMessageDialog(nombreAlta, "No hay especies dadas de alta");              
         }
         ventanaTratamiento.dispose();
     }//GEN-LAST:event_botonGTratamientoActionPerformed
@@ -925,14 +945,17 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             animales.get(combitoLib.getSelectedIndex()).setFechaLiberacion(fechaL);
             animales.get(combitoLib.getSelectedIndex()).setEstado("Liberado");
             animales.get(combitoLib.getSelectedIndex()).setTratamiento(null);
-            animales.get(combitoLib.getSelectedIndex()).setFechaMuerte(null);            
+            animales.get(combitoLib.getSelectedIndex()).setFechaMuerte(null);
+            animales.get(combitoLib.getSelectedIndex()).
             combitoLib.removeAllItems();
             ventanaLiberacion.dispose();
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(fechaLiberacion, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");  
         } catch (ParseException ex) {
             JOptionPane.showMessageDialog(fechaLiberacion, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy"); 
-        }        
+        }  catch(IndexOutOfBoundsException exc){
+            JOptionPane.showMessageDialog(nombreAlta, "No hay especies dadas de alta");              
+        }       
     }//GEN-LAST:event_botonGLiberacionActionPerformed
 
     private void botonGBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGBajaActionPerformed
@@ -950,6 +973,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(fechaLiberacion, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");  
         } catch (ParseException ex) {
             JOptionPane.showMessageDialog(fechaLiberacion, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy"); 
+        }  catch(IndexOutOfBoundsException exc){
+            JOptionPane.showMessageDialog(nombreAlta, "No hay especies dadas de alta");              
         }
     }//GEN-LAST:event_botonGBajaActionPerformed
 
@@ -961,6 +986,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private void combitoLibActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combitoLibActionPerformed
 
     }//GEN-LAST:event_combitoLibActionPerformed
+
+    private void veterinarioLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veterinarioLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_veterinarioLActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1019,6 +1048,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1056,6 +1086,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JFrame ventanaLiberacion;
     private javax.swing.JFrame ventanaListado;
     private javax.swing.JFrame ventanaTratamiento;
+    private javax.swing.JComboBox<String> veterinarioL;
     private javax.swing.JButton volverAlta;
     // End of variables declaration//GEN-END:variables
 }
