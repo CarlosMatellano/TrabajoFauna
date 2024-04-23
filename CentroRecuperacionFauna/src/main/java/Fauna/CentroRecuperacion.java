@@ -15,7 +15,10 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Clase que representa el centro de recuperación animal
+ * 
+ * Esta clase es un marco principal para una app utilizando swing.
+ * 
  * @author Hugo Mazarío Ros y Carlos Matellano Villacampa 1ºDAM
  */
 public class CentroRecuperacion extends javax.swing.JFrame {
@@ -25,9 +28,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
 
     static SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-    /**
-     * Creates new form CentroRecuperacion
-     */
+    
     public CentroRecuperacion() {
         setIconImage(icono.getImage());
         initComponents();
