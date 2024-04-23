@@ -61,15 +61,15 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jTextField10 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        textoTratamiento = new javax.swing.JTextField();
+        botonGTratamiento = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         combitoT = new javax.swing.JComboBox<>();
         ventanaLiberacion = new javax.swing.JFrame();
         jPanel4 = new javax.swing.JPanel();
         jTextField11 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jTextField15 = new javax.swing.JTextField();
+        botonGLiberacion = new javax.swing.JButton();
+        fechaLiberacion = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         combitoLib = new javax.swing.JComboBox<>();
@@ -82,7 +82,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaBaja = new javax.swing.JFrame();
         jPanel6 = new javax.swing.JPanel();
         jTextField13 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        botonGBaja = new javax.swing.JButton();
         jTextField17 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jTextField18 = new javax.swing.JTextField();
@@ -281,10 +281,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Tratamiento:");
 
-        jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonGTratamiento.setText("Guardar");
+        botonGTratamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonGTratamientoActionPerformed(evt);
             }
         });
 
@@ -301,7 +301,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(botonGTratamiento))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(47, 47, 47)
@@ -309,7 +309,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(12, 12, 12)
-                        .addComponent(jTextField3)))
+                        .addComponent(textoTratamiento)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -323,9 +323,9 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 .addGap(52, 52, 52)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textoTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(botonGTratamiento)
                 .addContainerGap())
         );
 
@@ -354,16 +354,16 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Guardar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botonGLiberacion.setText("Guardar");
+        botonGLiberacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botonGLiberacionActionPerformed(evt);
             }
         });
 
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
+        fechaLiberacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
+                fechaLiberacionActionPerformed(evt);
             }
         });
 
@@ -389,14 +389,14 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGap(0, 637, Short.MAX_VALUE)
-                        .addComponent(jButton2))
+                        .addComponent(botonGLiberacion))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
                             .addComponent(jLabel9))
                         .addGap(24, 24, 24)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField15)
+                            .addComponent(fechaLiberacion)
                             .addComponent(combitoLib, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
@@ -411,9 +411,9 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 .addGap(68, 68, 68)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fechaLiberacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addComponent(jButton2)
+                .addComponent(botonGLiberacion)
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -506,10 +506,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Guardar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        botonGBaja.setText("Guardar");
+        botonGBaja.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                botonGBajaActionPerformed(evt);
             }
         });
 
@@ -545,7 +545,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3)
+                    .addComponent(botonGBaja)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
@@ -574,7 +574,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                     .addComponent(jLabel11)
                     .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
-                .addComponent(jButton3)
+                .addComponent(botonGBaja)
                 .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
@@ -815,9 +815,9 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_pesoAltaActionPerformed
 
-    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
+    private void fechaLiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fechaLiberacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField15ActionPerformed
+    }//GEN-LAST:event_fechaLiberacionActionPerformed
 
     private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
         // TODO add your handling code here:
@@ -905,18 +905,22 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         ventanaListado.dispose();
     }//GEN-LAST:event_botonVolverActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        animales.get(combitoT.getSelectedIndex()).setTratamiento(jTextField3.getText());
+    private void botonGTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGTratamientoActionPerformed
+        try{
+        animales.get(combitoT.getSelectedIndex()).setTratamiento(textoTratamiento.getText());
         animales.get(combitoT.getSelectedIndex()).setEstado("Tratamiento");
         animales.get(combitoT.getSelectedIndex()).setFechaLiberacion(null);
         animales.get(combitoT.getSelectedIndex()).setFechaMuerte(null);
-        combitoT.removeAllItems();
+        combitoT.removeAllItems();   
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(textoTratamiento, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");  
+        }
         ventanaTratamiento.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonGTratamientoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void botonGLiberacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGLiberacionActionPerformed
         try {
-            String fechaLstr = jTextField15.getText();
+            String fechaLstr = fechaLiberacion.getText();
             Date fechaL = formato.parse(fechaLstr);
             animales.get(combitoLib.getSelectedIndex()).setFechaLiberacion(fechaL);
             animales.get(combitoLib.getSelectedIndex()).setEstado("Liberado");
@@ -924,12 +928,14 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             animales.get(combitoLib.getSelectedIndex()).setFechaMuerte(null);            
             combitoLib.removeAllItems();
             ventanaLiberacion.dispose();
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(fechaLiberacion, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");  
         } catch (ParseException ex) {
-            ex.getMessage();
+            JOptionPane.showMessageDialog(fechaLiberacion, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy"); 
         }        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_botonGLiberacionActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void botonGBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGBajaActionPerformed
         try {
             String fechaMstr = jTextField18.getText();
             Date fechaM = formato.parse(fechaMstr);
@@ -940,10 +946,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             combitoB.removeAllItems();
             ventanaBaja.dispose();
             
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(fechaLiberacion, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");  
         } catch (ParseException ex) {
-            ex.getMessage();
+            JOptionPane.showMessageDialog(fechaLiberacion, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy"); 
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_botonGBajaActionPerformed
 
     private void volverAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverAltaActionPerformed
         ventanaAlta.dispose();
@@ -996,16 +1004,17 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JButton Liberacion;
     private javax.swing.JButton alta;
     private javax.swing.JButton botonGAlta;
+    private javax.swing.JButton botonGBaja;
+    private javax.swing.JButton botonGLiberacion;
+    private javax.swing.JButton botonGTratamiento;
     private javax.swing.JButton botonVolver;
     private javax.swing.JComboBox<String> combitoB;
     private javax.swing.JComboBox<String> combitoLib;
     private javax.swing.JComboBox<String> combitoT;
     private javax.swing.JTextField especieAlta;
     private javax.swing.JTextField fechaEAlta;
+    private javax.swing.JTextField fechaLiberacion;
     private javax.swing.JTextField gravedadAlta;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1030,17 +1039,16 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextArea listaListado;
     private javax.swing.JButton listado;
     private javax.swing.JTextField nombreAlta;
     private javax.swing.JTextField pesoAlta;
     private javax.swing.JButton salir;
+    private javax.swing.JTextField textoTratamiento;
     private javax.swing.JComboBox<String> tipoAlta;
     private javax.swing.JButton tratamiento;
     private javax.swing.JFrame ventanaAlta;
