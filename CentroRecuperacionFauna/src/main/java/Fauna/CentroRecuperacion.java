@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +22,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
     static ArrayList<Animal> animales = new ArrayList();
     static ImageIcon icono = new ImageIcon("src/images/ZOO_favicon.png");
+
 
     static SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
     /**
@@ -102,10 +104,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
 
-        jPanel2.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel2.setBackground(new java.awt.Color(221, 227, 225));
 
         jTextField9.setEditable(false);
-        jTextField9.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField9.setBackground(new java.awt.Color(40, 163, 222));
         jTextField9.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField9.setForeground(new java.awt.Color(255, 255, 255));
         jTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -268,10 +270,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel3.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel3.setBackground(new java.awt.Color(221, 227, 225));
 
         jTextField10.setEditable(false);
-        jTextField10.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField10.setBackground(new java.awt.Color(40, 163, 222));
         jTextField10.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField10.setForeground(new java.awt.Color(255, 255, 255));
         jTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -344,10 +346,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel4.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel4.setBackground(new java.awt.Color(221, 227, 225));
 
         jTextField11.setEditable(false);
-        jTextField11.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField11.setBackground(new java.awt.Color(40, 163, 222));
         jTextField11.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField11.setForeground(new java.awt.Color(255, 255, 255));
         jTextField11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -450,10 +452,10 @@ public class CentroRecuperacion extends javax.swing.JFrame {
 
         ventanaListado.setResizable(false);
 
-        jPanel5.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel5.setBackground(new java.awt.Color(221, 227, 225));
 
         jTextField12.setEditable(false);
-        jTextField12.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField12.setBackground(new java.awt.Color(40, 163, 222));
         jTextField12.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField12.setForeground(new java.awt.Color(255, 255, 255));
         jTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -512,10 +514,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel6.setBackground(new java.awt.Color(153, 255, 153));
+        ventanaBaja.setResizable(false);
+
+        jPanel6.setBackground(new java.awt.Color(221, 227, 225));
 
         jTextField13.setEditable(false);
-        jTextField13.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField13.setBackground(new java.awt.Color(40, 163, 222));
         jTextField13.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField13.setForeground(new java.awt.Color(255, 255, 255));
         jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -578,7 +582,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField18)
-                            .addComponent(veterinarioB, 0, 1036, Short.MAX_VALUE)
+                            .addComponent(veterinarioB, 0, 1070, Short.MAX_VALUE)
                             .addComponent(combitoB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -587,7 +591,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(2, 2, 2)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.DEFAULT_SIZE, 1159, Short.MAX_VALUE)
+                    .addComponent(jTextField17, javax.swing.GroupLayout.DEFAULT_SIZE, 1193, Short.MAX_VALUE)
                     .addGap(2, 2, 2)))
         );
         jPanel6Layout.setVerticalGroup(
@@ -606,14 +610,14 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(botonGBaja)
                 .addGap(30, 30, 30))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(2, 2, 2)
                     .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(210, Short.MAX_VALUE)))
+                    .addContainerGap(214, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout ventanaBajaLayout = new javax.swing.GroupLayout(ventanaBaja.getContentPane());
@@ -631,7 +635,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel1.setBackground(new java.awt.Color(221, 227, 225));
 
         alta.setText("ALTA");
         alta.addActionListener(new java.awt.event.ActionListener() {
@@ -676,13 +680,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         });
 
         jTextField2.setEditable(false);
-        jTextField2.setBackground(new java.awt.Color(0, 153, 51));
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField2.setBackground(new java.awt.Color(40, 222, 161));
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField2.setText("SELECCIONE LA OPCIÓN A REALIZAR");
 
         jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(0, 153, 204));
+        jTextField1.setBackground(new java.awt.Color(40, 163, 222));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -789,14 +792,14 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             combitoLib.addItem(cadena);
         }
         combitoLib.getSelectedItem();
-        ventanaLiberacion.setSize(1100, 315);
+        ventanaLiberacion.setSize(1200, 315);
         ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
 
     private void BajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaActionPerformed
         ventanaBaja.setIconImage(icono.getImage());
 
-        ventanaBaja.setSize(1100, 290);
+        ventanaBaja.setSize(1200, 315);
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
             combitoB.addItem(cadena);
