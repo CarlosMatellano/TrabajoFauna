@@ -1083,6 +1083,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_veterinarioLActionPerformed
 
     /**
+     * Programa principal que lanza la ventana del Centro de Recuperación.
      * @param args the command line arguments
      */
     public static void main(String args[]) {
