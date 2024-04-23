@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Alumno
+ * @author Hugo Mazarío Ros y Carlos Matellano Villacampa 1ºDAM
  */
 public class CentroRecuperacion extends javax.swing.JFrame {
 
@@ -103,6 +103,9 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         salir = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
+
+        ventanaAlta.setBounds(new java.awt.Rectangle(700, 350, 445, 445));
+        ventanaAlta.setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(221, 227, 225));
 
@@ -220,7 +223,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                     .addComponent(nombreAlta)
                     .addComponent(tipoAlta, 0, 215, Short.MAX_VALUE)
                     .addComponent(gravedadAlta))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,7 +255,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                         .addComponent(tipoAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(nombreAlta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonGAlta)
                     .addComponent(volverAlta))
@@ -269,6 +272,9 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             ventanaAltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        ventanaTratamiento.setBounds(new java.awt.Rectangle(350, 350, 1200, 375));
+        ventanaTratamiento.setResizable(false);
 
         jPanel3.setBackground(new java.awt.Color(221, 227, 225));
 
@@ -311,7 +317,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(47, 47, 47)
-                        .addComponent(combitoT, 0, 482, Short.MAX_VALUE))
+                        .addComponent(combitoT, 0, 672, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(12, 12, 12)
@@ -330,7 +336,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(textoTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
                 .addComponent(botonGTratamiento)
                 .addContainerGap())
         );
@@ -345,6 +351,9 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             ventanaTratamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        ventanaLiberacion.setBounds(new java.awt.Rectangle(350, 350, 1200, 315));
+        ventanaLiberacion.setResizable(false);
 
         jPanel4.setBackground(new java.awt.Color(221, 227, 225));
 
@@ -436,7 +445,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                     .addComponent(fechaLiberacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addComponent(botonGLiberacion)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ventanaLiberacionLayout = new javax.swing.GroupLayout(ventanaLiberacion.getContentPane());
@@ -450,6 +459,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        ventanaListado.setBounds(new java.awt.Rectangle(350, 350, 1100, 375));
         ventanaListado.setResizable(false);
 
         jPanel5.setBackground(new java.awt.Color(221, 227, 225));
@@ -514,6 +524,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        ventanaBaja.setBounds(new java.awt.Rectangle(350, 350, 1200, 315));
         ventanaBaja.setResizable(false);
 
         jPanel6.setBackground(new java.awt.Color(221, 227, 225));
@@ -610,14 +621,14 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addComponent(botonGBaja)
                 .addGap(30, 30, 30))
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel6Layout.createSequentialGroup()
                     .addGap(2, 2, 2)
                     .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(214, Short.MAX_VALUE)))
+                    .addContainerGap(253, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout ventanaBajaLayout = new javax.swing.GroupLayout(ventanaBaja.getContentPane());
@@ -628,11 +639,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         );
         ventanaBajaLayout.setVerticalGroup(
             ventanaBajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setBounds(new java.awt.Rectangle(700, 350, 401, 371));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(221, 227, 225));
@@ -764,7 +776,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             String cadena = animales.get(i).toString();
             combitoT.addItem(cadena);
         }
-        ventanaTratamiento.setSize(1200, 375);
         ventanaTratamiento.setVisible(true);
     }//GEN-LAST:event_tratamientoActionPerformed
 
@@ -774,14 +785,12 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             String cadena = animales.get(i).toString();
             listaListado.append(cadena + "\n");
         }
-                ventanaListado.setSize(1100, 375);
 
         ventanaListado.setVisible(true);
     }//GEN-LAST:event_listadoActionPerformed
 
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
         ventanaAlta.setIconImage(icono.getImage());
-        ventanaAlta.setSize(445, 445);
         ventanaAlta.setVisible(true);
     }//GEN-LAST:event_altaActionPerformed
 
@@ -792,14 +801,14 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             combitoLib.addItem(cadena);
         }
         combitoLib.getSelectedItem();
-        ventanaLiberacion.setSize(1200, 315);
+        
         ventanaLiberacion.setVisible(true);
     }//GEN-LAST:event_LiberacionActionPerformed
 
     private void BajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BajaActionPerformed
         ventanaBaja.setIconImage(icono.getImage());
 
-        ventanaBaja.setSize(1200, 315);
+        
         for (int i = 0; i < animales.size(); i++) {
             String cadena = animales.get(i).toString();
             combitoB.addItem(cadena);
