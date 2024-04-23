@@ -809,6 +809,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         }
 
         ventanaListado.setVisible(true);
+        ventanaListado.setSize(445, 445);
+
     }//GEN-LAST:event_listadoActionPerformed
     /**
      * Realiza acciones al ocurrir un evento en el botón de alta. Actualiza la
@@ -819,6 +821,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
         ventanaAlta.setIconImage(icono.getImage());
         ventanaAlta.setVisible(true);
+        ventanaAlta.setSize(445, 445);
+
     }//GEN-LAST:event_altaActionPerformed
     /**
      * Realiza acciones al ocurrir un evento en el botón de liberación.
@@ -991,6 +995,22 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_gravedadAltaActionPerformed
 
+    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField15ActionPerformed
+
+    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField17ActionPerformed
+
+    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField18ActionPerformed
+
+    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
+        ventanaListado.dispose();
+    }//GEN-LAST:event_VolverActionPerformed
+
     /**
      * Realiza acciones al ocurrir un evento en el botón de volver en la ventana
      * de listado. Borra el contenido del área de texto y cierra la ventana de
@@ -1139,6 +1159,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Baja;
     private javax.swing.JButton Liberacion;
+    private javax.swing.JButton Volver;
     private javax.swing.JButton alta;
     private javax.swing.JButton botonGAlta;
     private javax.swing.JButton botonGBaja;
@@ -1159,7 +1180,6 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
