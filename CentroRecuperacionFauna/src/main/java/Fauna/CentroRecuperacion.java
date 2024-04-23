@@ -966,6 +966,7 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             animales.get(combitoLib.getSelectedIndex()).setVeterinario(veterinario);
             animales.get(combitoLib.getSelectedIndex()).setTratamiento(null);
             animales.get(combitoLib.getSelectedIndex()).setFechaMuerte(null);
+            combitoLib.removeAll();
             ventanaLiberacion.dispose();
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(fechaLiberacion, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");  
