@@ -9,7 +9,8 @@ import java.util.Date;
  */
 
 /**
- *
+ * Clase Animal representa animales dentro de un ceutro de fauna.
+ * 
  * @author Hugo Mazarío Ros y Carlos Matellano Villacampa 1ºDAM
  */
 public class Animal {
@@ -25,7 +26,17 @@ public class Animal {
     protected Date fechaMuerte;
     protected String veterinario;
     
-    //Constructor Principal
+    /**
+     * Constructor principal para crear un Animal con detalles básicos.
+     * 
+     * @param tipoAnimal El tipo de animal.
+     * @param nombre El nombre del animal.
+     * @param especie La especie del animal.
+     * @param peso El peso del animal.
+     * @param gravedad El grado de gravedad de la condición del animal.
+     * @param estado El estado actual del animal.
+     * @param fechaentrada La fecha de admisión.
+     */
     public Animal(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada) {
         this.tipoAnimal = tipoAnimal;
         this.nombre = nombre;
@@ -36,7 +47,18 @@ public class Animal {
         this.fechaentrada = fechaentrada;
     }
 
-    //Constructor Tratamiento
+    /**
+     * Constructor para crear un Animal con tratamiento específico.
+     * 
+     * @param tipoAnimal El tipo de animal.
+     * @param nombre El nombre del animal.
+     * @param especie La especie del animal.
+     * @param peso El peso del animal.
+     * @param gravedad El grado de gravedad de la condición del animal.
+     * @param estado El estado actual del animal.
+     * @param fechaentrada La fecha de admisión.
+     * @param tratamiento El tratamiento administrado.
+     */
     public Animal(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, String tratamiento) {
         this.tipoAnimal = tipoAnimal;
         this.nombre = nombre;
@@ -48,7 +70,19 @@ public class Animal {
         this.tratamiento = tratamiento;
     }
 
-    //Constructor Liberaión
+    /**
+     * Constructor para crear un Animal que incluye la fecha de liberación y el veterinario.
+     * 
+     * @param tipoAnimal El tipo de animal.
+     * @param nombre El nombre del animal.
+     * @param especie La especie del animal.
+     * @param peso El peso del animal.
+     * @param gravedad El grado de gravedad de la condición del animal.
+     * @param estado El estado actual del animal.
+     * @param fechaentrada La fecha de admisión.
+     * @param fechaLiberacion La fecha de liberación.
+     * @param veterinario El veterinario responsable.
+     */
     public Animal(String tipoAnimal, String nombre, String especie, Double peso, String gravedad, String estado, Date fechaentrada, Date fechaLiberacion, String veterinario) {
         this.tipoAnimal = tipoAnimal;
         this.nombre = nombre;
@@ -60,7 +94,18 @@ public class Animal {
         this.fechaLiberacion = fechaLiberacion;
         this.veterinario = veterinario;
     }
-
+    /**
+     * Constructor para crear un Animal con información de fecha de muerte y veterinario.
+     * 
+     * @param tipoAnimal El tipo de animal.
+     * @param nombre El nombre del animal.
+     * @param especie La especie del animal.
+     * @param gravedad La gravedad de la condición del animal.
+     * @param estado El estado actual del animal.
+     * @param fechaentrada La fecha de admisión.
+     * @param fechaMuerte La fecha de muerte.
+     * @param veterinario El veterinario responsable.
+     */
     public Animal(String tipoAnimal, String nombre, String especie, String gravedad, String estado, Date fechaentrada, Date fechaMuerte, String veterinario) {
         this.tipoAnimal = tipoAnimal;
         this.nombre = nombre;
@@ -72,6 +117,11 @@ public class Animal {
         this.veterinario = veterinario;
     }
     
+    
+    /**
+     * 
+     * Aquí todos los geter y seter para interactuar con los objetos
+     */
     public String getTratamiento() {
         return tratamiento;
     }
