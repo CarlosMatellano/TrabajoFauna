@@ -828,18 +828,14 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField18ActionPerformed
 
     private void botonGAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGAltaActionPerformed
+        try {
         String nombreA = nombreAlta.getText();
         String especieA = especieAlta.getText();
         Double pesoA = Double.parseDouble(pesoAlta.getText());
         String gravedadA = gravedadAlta.getText();
         Date fechaEA = null;
-        try {
-            String fechastr = fechaEAlta.getText();
-            fechaEA = formato.parse(fechastr);     
-        } catch (NumberFormatException ex) {
-            
-        }catch (ParseException e) {
-        }
+        String fechastr = fechaEAlta.getText();
+        fechaEA = formato.parse(fechastr);
         if (tipoAlta.getSelectedItem().equals("AVE")) {
             String lesioncaza = "";
             int opcion = JOptionPane.showConfirmDialog(null, "¿La lesión ha sido provocada por caza furtiva?", "Tipo de Lesión", JOptionPane.YES_NO_OPTION);
@@ -888,8 +884,11 @@ public class CentroRecuperacion extends javax.swing.JFrame {
                 fechaEAlta.setText("dd/mm/aaaa");
             }
         }
-        if (nombreAlta.getText() == "" || especieAlta.getText() == "" || pesoAlta.getText() == "" || gravedadAlta.getText() == "") {
-            JOptionPane.showMessageDialog(nombreAlta, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(nombreAlta, "No puedes dejar datos en blanco. Rellena todos los datos por favor.");  
+        }
+        catch (ParseException e) {
+            JOptionPane.showMessageDialog(nombreAlta, "Formato de fecha mal introducido. Por favor introduzca la fecha con el sisguiente formato: dd/MM/yyyy");  
         }
     }//GEN-LAST:event_botonGAltaActionPerformed
 
@@ -909,6 +908,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         animales.get(combitoT.getSelectedIndex()).setTratamiento(jTextField3.getText());
         animales.get(combitoT.getSelectedIndex()).setEstado("Tratamiento");
+        animales.get(combitoT.getSelectedIndex()).setFechaLiberacion(null);
+        animales.get(combitoT.getSelectedIndex()).setFechaMuerte(null);
         combitoT.removeAllItems();
         ventanaTratamiento.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -917,15 +918,15 @@ public class CentroRecuperacion extends javax.swing.JFrame {
         try {
             String fechaLstr = jTextField15.getText();
             Date fechaL = formato.parse(fechaLstr);
-            animales.get(combitoB.getSelectedIndex()).setFechaMuerte(fechaL);
-            animales.get(combitoB.getSelectedIndex()).setEstado("Liberado");
-            combitoB.removeAllItems();
-            ventanaBaja.dispose();
-            
+            animales.get(combitoLib.getSelectedIndex()).setFechaLiberacion(fechaL);
+            animales.get(combitoLib.getSelectedIndex()).setEstado("Liberado");
+            animales.get(combitoLib.getSelectedIndex()).setTratamiento(null);
+            animales.get(combitoLib.getSelectedIndex()).setFechaMuerte(null);            
+            combitoLib.removeAllItems();
+            ventanaLiberacion.dispose();
         } catch (ParseException ex) {
             ex.getMessage();
         }        
-        ventanaLiberacion.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -934,6 +935,8 @@ public class CentroRecuperacion extends javax.swing.JFrame {
             Date fechaM = formato.parse(fechaMstr);
             animales.get(combitoB.getSelectedIndex()).setFechaMuerte(fechaM);
             animales.get(combitoB.getSelectedIndex()).setEstado("Fallecido");
+            animales.get(combitoB.getSelectedIndex()).setTratamiento(null);
+            animales.get(combitoB.getSelectedIndex()).setFechaLiberacion(null);
             combitoB.removeAllItems();
             ventanaBaja.dispose();
             
